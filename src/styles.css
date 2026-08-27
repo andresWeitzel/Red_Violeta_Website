@@ -75,3 +75,13 @@ body {
 .site-nav .navbar-brand:hover {
   color: var(--rv-primary-dark) !important;
 }
+
+.help-dialog {
+  margin: auto;
+  background: #fff;
+}
+
+.help-dialog::backdrop {
+  background: rgba(36, 18, 28, 0.55);
+  backdrop-filter: blur(8px);
+}

@@ -18,8 +18,16 @@
                         <a class="nav-link" routerLink="/inicio">Inicio
                         </a>
                     </li>
-                    <li class="nav-item" routerLinkActive="active">
-                        <a class="nav-link" href="#" data-toggle="modal" data-target="#modalAyuda">Ayuda</a>
+                    <li class="nav-item">
+                        <button
+                          type="button"
+                          class="nav-link nav-help-btn"
+                          aria-haspopup="dialog"
+                          aria-controls="modalAyuda"
+                          (click)="openHelp()"
+                        >
+                          Ayuda
+                        </button>
                     </li>
                     <li class="nav-item" routerLinkActive="active">
                         <a class="nav-link" routerLink="/novedades">Novedades</a>
@@ -35,28 +43,86 @@
         </div>
     </nav>
     <!-- Fin Navigation -->
-    <!--MODAL AYUDA(fuera del nav)-->
-    <div class="modal fade " id="modalAyuda" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content m-2">
-                <div class="modal-header">
-                    <h5 class="modal-title text-center">Ayuda</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    En este sitio se te brinda la mayor información posible para ayudarte, los números de telefono estan disponibles las 24 hs y los 365 días del año, podés contactarte también por mail o por whatsapp, sino dirigirte a alguna entidad visible mismo en la página,
-                    en donde se detallan los medios de comunicación y su dirección.<br>En caso de que quieras realizar alguna denuncia clickea el botón "Registar Denuncia" desde la página o mismo desde la barra de direcciones ubicada
-                    en la parte superior. Recordá que deberás adjuntar la mayor documentación posible para que se acredite de forma correcta tu denuncia. <br> Estamos para ayudarte
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-dismiss="modal">Cerrar</button>
 
-                </div>
+    <dialog
+      #helpDialog
+      id="modalAyuda"
+      class="help-dialog"
+      aria-labelledby="help-dialog-title"
+      (click)="onDialogClick($event)"
+    >
+      <div class="help-dialog-panel">
+        <header class="help-dialog-head">
+          <div>
+            <p class="help-dialog-kicker">Guía rápida</p>
+            <h2 id="help-dialog-title">Cómo pedir ayuda</h2>
+          </div>
+          <button type="button" class="help-dialog-close" (click)="closeHelp()" aria-label="Cerrar ayuda">
+            <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+              <path fill="currentColor" d="M3.2 3.2a.75.75 0 011.06 0L8 6.94l3.74-3.74a.75.75 0 111.06 1.06L9.06 8l3.74 3.74a.75.75 0 11-1.06 1.06L8 9.06l-3.74 3.74a.75.75 0 11-1.06-1.06L6.94 8 3.2 4.26a.75.75 0 010-1.06z"/>
+            </svg>
+          </button>
+        </header>
+
+        <div class="help-dialog-body">
+          <aside class="help-emergency">
+            <div>
+              <p>Si hay peligro ahora</p>
+              <span>Ponete a resguardo y llamá al 911. Es la vía más rápida.</span>
             </div>
+            <a class="help-emergency-btn" href="tel:911">Llamar al 911</a>
+          </aside>
+
+          <ol class="help-paths">
+            <li>
+              <span>1</span>
+              <div>
+                <h3>Orientación, las 24 horas</h3>
+                <p>Las líneas son gratuitas los 365 días. También podés escribir por WhatsApp o email desde Inicio.</p>
+                <div class="help-chips">
+                  <a href="tel:144" aria-label="Llamar al 144, violencia de género">
+                    <strong>144</strong>
+                    <em>Género</em>
+                  </a>
+                  <a href="tel:137" aria-label="Llamar al 137, violencia familiar y sexual">
+                    <strong>137</strong>
+                    <em>Familiar</em>
+                  </a>
+                  <a href="tel:145" aria-label="Llamar al 145, trata de personas">
+                    <strong>145</strong>
+                    <em>Trata</em>
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <span>2</span>
+              <div>
+                <h3>Dejar constancia</h3>
+                <p>Registrá la denuncia en el sitio. Adjuntá la mayor documentación posible para que se pueda acreditar.</p>
+                <a class="help-text-link" routerLink="/formulario-denuncias" (click)="closeHelp()">Ir al formulario</a>
+              </div>
+            </li>
+            <li>
+              <span>3</span>
+              <div>
+                <h3>Acercarte a un organismo</h3>
+                <p>En Inicio está el mapa con entidades, teléfonos y direcciones si preferís ir en persona.</p>
+                <a class="help-text-link" routerLink="/inicio" (click)="closeHelp()">Ver mapa en Inicio</a>
+              </div>
+            </li>
+          </ol>
+
+          <p class="help-privacy">
+            Si no estás en un lugar seguro, preferí una llamada. En un dispositivo compartido, borrá el historial cuando termines.
+          </p>
         </div>
-    </div>
-    <!--MODAL AYUDA-->
+
+        <footer class="help-dialog-foot">
+          <button type="button" class="help-ghost-btn" (click)="closeHelp()">Cerrar</button>
+          <a class="help-primary-btn" routerLink="/formulario-denuncias" (click)="closeHelp()">Registrar denuncia</a>
+        </footer>
+      </div>
+    </dialog>
 </header>
 <!--FIN HEADER-->
