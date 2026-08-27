@@ -1,0 +1,22 @@
+:host {
+  --rv-ink: #241c22;
+  --rv-muted: #5e5560;
+  --rv-paper: #f7f3f5;
+  --rv-card: #ffffff;
+  --rv-green: #1f7a4c;
+  --rv-green-dark: #16603b;
+  --rv-violet: #8a245f;
+  --rv-violet-soft: #f4e7ee;
+  --rv-line: #eadfe6;
+  --rv-shadow: 0 12px 32px rgba(36, 28, 34, 0.08);
+  --rv-radius: 18px;
+  display: block;
+  background: var(--rv-paper);
+  color: var(--rv-ink);
+  font-family: Manrope, "Segoe UI", sans-serif;
+  padding-top: 4.5rem;
+}
+
+.inicio-page {
+  min-height: 70vh;
+}

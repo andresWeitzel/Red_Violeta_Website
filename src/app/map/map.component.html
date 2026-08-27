@@ -1,165 +1,49 @@
-<!--GOOGLE MAP-->
-<div class="row row-cols-sm-1 row-cols-md-1 row-cols-lg-3 row-cols-xl-3 text-dark  text-center m-1">
+<section class="places-section" aria-labelledby="places-title">
+  <div class="container places-wrap">
+    <header class="section-heading">
+      <p class="section-kicker">Acompañamiento presencial</p>
+      <h2 id="places-title">Dónde pedir ayuda</h2>
+      <p class="section-lead">
+        Organismos con dirección, teléfono y sitio oficial. Los mapas se adaptan al ancho de la pantalla.
+      </p>
+    </header>
 
-    <!--MINISTERIO DE LAS MUJERES-->
-    <div>
-        <div class="card row m-2">
-            <h5 class="card-header ">Ministerio de las Mujeres, Políticas de Género, y Diversidad Sexual</h5>
-            <div class="card-body">
-                <div>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13086.760988668932!2d-57.9480185!3d-34.9142221!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xca197542f83c309f!2sMinisterio%20de%20las%20Mujeres%2C%20Pol%C3%ADticas%20de%20G%C3%A9nero%2C%20y%20Diversidad%20Sexual!5e0!3m2!1spt-PT!2sar!4v1608353571669!5m2!1spt-PT!2sar"
-                        width="350" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                </div>
-                <div class="m-2">
-                    <p><strong>Dirección:</strong> Calle 6 N° 950 (esquina 51) – La Plata (1900)</p>
-                    <p><strong>Mail:</strong> contacto@ministeriodelasmujeres.gba.gob.ar</p>
-                    <p><strong>Telefono:</strong> +542214222546</p>
-
-                </div>
-                <a href="https://www.gba.gob.ar/mujeres" target="_blank" class="btn btn-success">Ir al Sitio Web</a>
-
-                <!--MODAL INFO-->
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-success  m-2" data-toggle="modal" data-target="#exampleModalBotonInfo1">
-                  Acerca de..
-                   </button>
-
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModalBotonInfo1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-
-                    <div class="modal-dialog modal-dialog-scrollable text-center">
-                        <div class="modal-content text-center">
-                            <div class="modal-header text-center">
-                                <h5 class="modal-title text-center" id="exampleModalLabel">Ministerio de las Mujeres, Políticas de Género, y Diversidad Sexual</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                  <span aria-hidden="true">&times;</span>
-                                  </button>
-                            </div>
-                            <div class="modal-body">
-                                Desarrollamos políticas integrales para la plena igualdad jurídica, social, económica, laboral, política y cultural entre los géneros. Transversalizamos el enfoque de género en el estado provincial. Trabajamos para la prevención y erradicación de la violencia
-                                por razones de género.
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-success" data-dismiss="modal">Cerrar</button>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!--FIN MODAL INFO-->
+    <div class="row">
+      @for (place of places; track place.id) {
+        <div class="col-12 col-lg-4 d-flex">
+          <article class="place-card">
+            <div class="place-map">
+              <iframe
+                [src]="place.mapSrc"
+                [title]="'Mapa de ' + place.name"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+              ></iframe>
             </div>
-        </div>
-    </div>
-    <!--MINISTERIO DE LAS MUJERES-->
-
-
-    <!--INSTITUTO CONTRA LA DISCRIMINACION-->
-    <div>
-        <div class="card row m-2">
-            <h5 class="card-header">Instituto Nacional contra la discriminación, xenofobia y racismo (INADI)</h5>
-            <div class="card-body">
-                <div>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13135.213282583894!2d-58.3863727!3d-34.6091346!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x81498f52765f960d!2sINADI%20%7C%20Instituto%20Nacional%20contra%20la%20Discriminaci%C3%B3n%2C%20la%20Xenofobia%20y%20el%20Racismo!5e0!3m2!1spt-PT!2sar!4v1609696979313!5m2!1spt-PT!2sar"
-                        width="350" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                </div>
-                <div class="m-2">
-                    <p><strong>Dirección:</strong> Av. de Mayo 1401, CABA</p>
-                    <p><strong>Mail:</strong> -</p>
-                    <p><strong>Telefono:</strong> 0800-999-2345</p>
-
-                </div>
-                <a href="https://www.argentina.gob.ar/inadi" target="_blank" class="btn btn-success">Ir al Sitio Web</a>
-
-                <!--MODAL INFO-->
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-success  m-2" data-toggle="modal" data-target="#exampleModalBotonInfo2">
-               Acerca de..
-                </button>
-
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModalBotonInfo2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-
-                    <div class="modal-dialog modal-dialog-scrollable text-center">
-                        <div class="modal-content text-center">
-                            <div class="modal-header text-center">
-                                <h5 class="modal-title text-center" id="exampleModalLabel">Registro de Denuncias</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                  <span aria-hidden="true">&times;</span>
-                                    </button>
-                            </div>
-                            <div class="modal-body">
-                                Para realizar una denuncia deberá completar un formulario para poder guiarnos a qué área corresponde dicha denuncia y de esa forma que llegué al sector correspondiente formado por expertos. Tenga en cuenta para dicha denuncia se deberá incluir el máximo
-                                de evidencias para así poder validar la misma de una manera mucho más rápida.
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-success" data-dismiss="modal">Cerrar</button>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!--FIN MODAL INFO-->
+            <div class="place-body">
+              <h3>{{ place.name }}</h3>
+              <p>{{ place.about }}</p>
+              <ul class="place-meta">
+                <li><span>Dirección</span> {{ place.address }}</li>
+                <li>
+                  <span>Teléfono</span>
+                  <a [href]="place.phoneHref">{{ place.phone }}</a>
+                </li>
+                @if (place.email) {
+                  <li>
+                    <span>Email</span>
+                    <a [href]="'mailto:' + place.email">{{ place.email }}</a>
+                  </li>
+                }
+              </ul>
+              <a class="place-link" [href]="place.website" target="_blank" rel="noopener noreferrer">
+                Ir al sitio web
+              </a>
             </div>
+          </article>
         </div>
+      }
     </div>
-
-    <!--FIN INSTITUTO CONTRA LA DISCRIMINACION-->
-
-    <!--OFICINA DE VIOLENCIA DOMESTICA -->
-    <div>
-        <div class="card row m-2">
-            <h5 class="card-header "> Oficina de Violencia Doméstica (OVD) - Corte Suprema de Justicia</h5>
-            <div class="card-body">
-                <div>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13136.217897346176!2d-58.3844394!3d-34.602784!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa4a09f7ad7e65b51!2sovd!5e0!3m2!1spt-PT!2sar!4v1608774115689!5m2!1spt-PT!2sar" width="350" height="300"
-                        frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                </div>
-                <div class="m-2">
-                    <p><strong>Dirección:</strong> Lavalle 1250, CABA</p>
-                    <p><strong>Mail:</strong> -</p>
-                    <p><strong>Telefono:</strong> +5441234510</p>
-
-                </div>
-                <a href="https://www.ovd.gob.ar/ovd/" target="_blank" class="btn btn-success">Ir al Sitio Web</a>
-
-                <!--MODAL INFO-->
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-success  m-2" data-toggle="modal" data-target="#exampleModalBotonInfo2">
-               Acerca de..
-                </button>
-
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModalBotonInfo2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-
-                    <div class="modal-dialog modal-dialog-scrollable text-center">
-                        <div class="modal-content text-center">
-                            <div class="modal-header text-center">
-                                <h5 class="modal-title text-center" id="exampleModalLabel">Registro de Denuncias</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-               <span aria-hidden="true">&times;</span>
-                </button>
-                            </div>
-                            <div class="modal-body">
-                                Para realizar una denuncia deberá completar un formulario para poder guiarnos a qué área corresponde dicha denuncia y de esa forma que llegué al sector correspondiente formado por expertos. Tenga en cuenta para dicha denuncia se deberá incluir el máximo
-                                de evidencias para así poder validar la misma de una manera mucho más rápida.
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-success" data-dismiss="modal">Cerrar</button>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!--FIN MODAL INFO-->
-            </div>
-        </div>
-    </div>
-    <!--OFICINA DE VIOLENCIA DOMESTICA -->
-
-
-</div>
-
-<!--FIN GOOGLE MAP-->
+  </div>
+</section>

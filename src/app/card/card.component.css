@@ -1,6 +1,194 @@
- section {
-     position: relative;
-     text-align: center;
-     justify-content: center;
-     align-items: center;
- }
+:host {
+  display: block;
+  font-family: Manrope, "Segoe UI", sans-serif;
+}
+
+.help-section {
+  padding: 2.5rem 0 1rem;
+}
+
+.help-wrap {
+  max-width: 1120px;
+}
+
+.section-heading {
+  max-width: 40rem;
+  margin: 0 auto 1.75rem;
+  text-align: center;
+}
+
+.section-kicker {
+  margin: 0 0 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8a245f;
+}
+
+.section-heading h2 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #241c22;
+}
+
+.section-lead {
+  margin: 0;
+  color: #5e5560;
+  line-height: 1.55;
+}
+
+.help-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 1.25rem;
+  padding: 1.25rem 1.2rem 1.15rem;
+  background: #fff;
+  border: 1px solid #eadfe6;
+  border-radius: 18px;
+  box-shadow: 0 10px 28px rgba(36, 28, 34, 0.06);
+  text-align: left;
+}
+
+.help-label {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #5e5560;
+}
+
+.help-number {
+  display: inline-block;
+  margin: 0.15rem 0 0.45rem;
+  color: #1f7a4c;
+  font-size: 2.35rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  text-decoration: none;
+}
+
+.help-number:hover,
+.help-number:focus {
+  color: #16603b;
+  text-decoration: none;
+}
+
+.help-card h3 {
+  margin: 0 0 0.45rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #241c22;
+}
+
+.help-card p {
+  margin: 0 0 1rem;
+  color: #5e5560;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.help-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: auto;
+}
+
+.help-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid #eadfe6;
+  border-radius: 999px;
+  color: #241c22;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  background: #fff;
+}
+
+.help-btn:hover,
+.help-btn:focus {
+  color: #8a245f;
+  border-color: #8a245f;
+  text-decoration: none;
+}
+
+.help-btn--primary {
+  background: #1f7a4c;
+  border-color: #1f7a4c;
+  color: #fff;
+}
+
+.help-btn--primary:hover,
+.help-btn--primary:focus {
+  background: #16603b;
+  border-color: #16603b;
+  color: #fff;
+}
+
+.help-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0.5rem 0 0.25rem;
+  padding: 1.25rem 1.4rem;
+  background: #241c22;
+  color: #fff;
+  border-radius: 18px;
+}
+
+.help-cta h3 {
+  margin: 0 0 0.3rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.help-cta p {
+  margin: 0;
+  max-width: 38rem;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.help-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.55rem 1.2rem;
+  border-radius: 999px;
+  background: #1f7a4c;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.help-cta-btn:hover,
+.help-cta-btn:focus {
+  background: #2a9a61;
+  color: #fff;
+  text-decoration: none;
+}
+
+@media (max-width: 575.98px) {
+  .help-cta {
+    text-align: left;
+  }
+
+  .help-cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
