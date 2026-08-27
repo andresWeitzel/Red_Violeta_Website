@@ -1,7 +1,7 @@
 :root {
   --rv-ink: #3a2430;
   --rv-muted: #74606a;
-  --rv-paper: #f9f4f6;
+  --rv-paper: #f4e6ec;
   --rv-card: #ffffff;
   --rv-primary: #b45c7e;
   --rv-primary-dark: #934866;
@@ -15,9 +15,12 @@
 body {
   background-color: var(--rv-paper);
   background-image:
-    radial-gradient(ellipse 90% 55% at 100% -8%, rgba(180, 92, 126, 0.16), transparent 52%),
-    radial-gradient(ellipse 70% 45% at -10% 110%, rgba(208, 138, 166, 0.18), transparent 50%),
-    linear-gradient(180deg, #fbf7f8 0%, #f6eef2 100%);
+    radial-gradient(ellipse 70% 50% at 8% 0%, rgba(212, 130, 162, 0.34), transparent 55%),
+    radial-gradient(ellipse 60% 45% at 100% 12%, rgba(180, 92, 126, 0.22), transparent 52%),
+    radial-gradient(ellipse 55% 40% at 80% 100%, rgba(208, 138, 166, 0.28), transparent 58%),
+    radial-gradient(circle at 1px 1px, rgba(180, 92, 126, 0.14) 1px, transparent 0),
+    linear-gradient(180deg, #f7e9ee 0%, #efd5df 100%);
+  background-size: auto, auto, auto, 22px 22px, auto;
   background-attachment: fixed;
   color: var(--rv-ink);
 }
@@ -56,7 +59,7 @@ body {
 }
 
 .site-nav {
-  background: rgba(255, 250, 252, 0.92);
+  background: rgba(250, 236, 242, 0.88);
   border-bottom: 1px solid var(--rv-line);
   box-shadow: 0 2px 16px rgba(58, 36, 48, 0.05);
   backdrop-filter: blur(8px);
