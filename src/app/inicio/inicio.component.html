@@ -1,5 +1,70 @@
 <div class="inicio-page">
   <app-carrousel></app-carrousel>
   <app-card></app-card>
+
+  <section class="guide-section" aria-labelledby="guide-title">
+    <div class="guide-wrap">
+      <header class="guide-heading">
+        <p>Cómo pedir ayuda</p>
+        <h2 id="guide-title">Tres caminos, según lo que necesites ahora</h2>
+      </header>
+      <ol class="guide-steps">
+        <li>
+          <span>1</span>
+          <div>
+            <h3>Si hay peligro ahora</h3>
+            <p>Ponete a resguardo y llamá al 911. Es la vía más rápida cuando hay riesgo inmediato.</p>
+          </div>
+        </li>
+        <li>
+          <span>2</span>
+          <div>
+            <h3>Si necesitás orientación</h3>
+            <p>Las líneas 144, 137 y 145 atienden las 24 horas. También podés escribir por WhatsApp o email.</p>
+          </div>
+        </li>
+        <li>
+          <span>3</span>
+          <div>
+            <h3>Si querés dejar constancia</h3>
+            <p>Registrá la denuncia en el sitio o acercate a un organismo. Llevá la mayor documentación posible.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
   <app-map></app-map>
+
+  <section class="resources-section" aria-labelledby="resources-title">
+    <div class="resources-wrap">
+      <header class="guide-heading">
+        <p>Sitios oficiales</p>
+        <h2 id="resources-title">Derechos, denuncias y asistencia del Estado</h2>
+        <span class="resources-lead">
+          Páginas de Nación, CABA y Provincia de Buenos Aires para ampliar información o iniciar un trámite.
+        </span>
+      </header>
+      <div class="resources-grid">
+        @for (resource of resources; track resource.url) {
+          <a class="resource-card" [href]="resource.url" target="_blank" rel="noopener noreferrer">
+            <span class="resource-tag">{{ resource.jurisdiction }}</span>
+            <h3>{{ resource.title }}</h3>
+            <p>{{ resource.description }}</p>
+            <span class="resource-link">Abrir sitio oficial</span>
+          </a>
+        }
+      </div>
+    </div>
+  </section>
+
+  <aside class="privacy-note">
+    <div class="privacy-wrap">
+      <strong>Si no estás en un lugar seguro</strong>
+      <p>
+        Preferí una llamada. Si usás esta página en una computadora o celular compartido, borrá el historial cuando
+        termines.
+      </p>
+    </div>
+  </aside>
 </div>

@@ -1,4 +1,17 @@
 header {
-    font-size: 20px;
-    position: relative;
+  font-size: 1.05rem;
+  position: relative;
+}
+
+.brand-mark {
+  width: 32px;
+  height: 32px;
+  margin-right: 0.35rem;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }

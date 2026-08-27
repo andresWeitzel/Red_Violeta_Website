@@ -23,7 +23,7 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #8a245f;
+  color: var(--rv-primary, #b45c7e);
 }
 
 .section-heading h2 {
@@ -65,7 +65,7 @@
 .help-number {
   display: inline-block;
   margin: 0.15rem 0 0.45rem;
-  color: #1f7a4c;
+  color: var(--rv-primary, #b45c7e);
   font-size: 2.35rem;
   font-weight: 800;
   line-height: 1;
@@ -75,7 +75,7 @@
 
 .help-number:hover,
 .help-number:focus {
-  color: #16603b;
+  color: var(--rv-primary-dark, #934866);
   text-decoration: none;
 }
 
@@ -86,7 +86,8 @@
   color: #241c22;
 }
 
-.help-card p {
+.help-desc {
+  flex: 1;
   margin: 0 0 1rem;
   color: #5e5560;
   font-size: 0.92rem;
@@ -94,9 +95,10 @@
 }
 
 .help-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  width: 100%;
   margin-top: auto;
 }
 
@@ -104,12 +106,14 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  min-width: 0;
   min-height: 40px;
-  padding: 0.35rem 0.8rem;
+  padding: 0.4rem 0.5rem;
   border: 1px solid #eadfe6;
   border-radius: 999px;
   color: #241c22;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 700;
   text-decoration: none;
   background: #fff;
@@ -117,21 +121,22 @@
 
 .help-btn:hover,
 .help-btn:focus {
-  color: #8a245f;
-  border-color: #8a245f;
+  color: var(--rv-primary, #b45c7e);
+  border-color: var(--rv-primary, #b45c7e);
   text-decoration: none;
 }
 
 .help-btn--primary {
-  background: #1f7a4c;
-  border-color: #1f7a4c;
+  grid-column: 1 / -1;
+  background: var(--rv-primary, #b45c7e);
+  border-color: var(--rv-primary, #b45c7e);
   color: #fff;
 }
 
 .help-btn--primary:hover,
 .help-btn--primary:focus {
-  background: #16603b;
-  border-color: #16603b;
+  background: var(--rv-primary-dark, #934866);
+  border-color: var(--rv-primary-dark, #934866);
   color: #fff;
 }
 
@@ -143,7 +148,7 @@
   gap: 1rem;
   margin: 0.5rem 0 0.25rem;
   padding: 1.25rem 1.4rem;
-  background: #241c22;
+  background: var(--rv-deep, #5e3548);
   color: #fff;
   border-radius: 18px;
 }
@@ -168,7 +173,7 @@
   min-height: 44px;
   padding: 0.55rem 1.2rem;
   border-radius: 999px;
-  background: #1f7a4c;
+  background: var(--rv-primary, #b45c7e);
   color: #fff;
   font-weight: 700;
   text-decoration: none;
@@ -177,7 +182,7 @@
 
 .help-cta-btn:hover,
 .help-cta-btn:focus {
-  background: #2a9a61;
+  background: var(--rv-accent, #d08aa6);
   color: #fff;
   text-decoration: none;
 }

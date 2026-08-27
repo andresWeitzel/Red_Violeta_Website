@@ -1,6 +1,16 @@
 import { AfterViewInit, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
+interface CarouselSlide {
+  id: string;
+  src: string;
+  alt: string;
+  kicker: string;
+  title: string;
+  titleLines?: string[];
+  text: string;
+}
+
 @Component({
   selector: 'app-carrousel',
   imports: [RouterLink],
@@ -8,17 +18,18 @@ import { RouterLink } from '@angular/router';
   styleUrl: './carrousel.component.css',
 })
 export class CarrouselComponent implements AfterViewInit {
-  slides = [
+  slides: CarouselSlide[] = [
     {
       id: 'mensaje',
-      kind: 'graphic' as const,
+      src: 'assets/carousel-slide-1.jpg',
+      alt: 'Dos personas acompañándose, en señal de apoyo',
       kicker: 'Red de ayuda',
       title: 'No más violencia contra las mujeres',
-      text: 'No fue un mal día. No fue culpa de nadie. Si estás en riesgo, pedí ayuda y registrá la denuncia.',
+      titleLines: ['No más', 'violencia', 'contra', 'las mujeres'],
+      text: 'No fue un mal día, no fue culpa de nadie. Denunciá.',
     },
     {
       id: 'identidad',
-      kind: 'photo' as const,
       src: 'assets/violencia2.jpg',
       alt: 'Manos formando un corazón frente a una bandera del orgullo',
       kicker: 'Identidad',
@@ -27,7 +38,6 @@ export class CarrouselComponent implements AfterViewInit {
     },
     {
       id: 'discriminacion',
-      kind: 'photo' as const,
       src: 'assets/violencia3.jpg',
       alt: 'Cartel de protesta por igualdad y derechos',
       kicker: 'Igualdad',

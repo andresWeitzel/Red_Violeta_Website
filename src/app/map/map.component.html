@@ -4,46 +4,69 @@
       <p class="section-kicker">Acompañamiento presencial</p>
       <h2 id="places-title">Dónde pedir ayuda</h2>
       <p class="section-lead">
-        Organismos con dirección, teléfono y sitio oficial. Los mapas se adaptan al ancho de la pantalla.
+        Elegí el organismo para ver el mapa, la dirección y cómo comunicarte. Si hay riesgo inmediato, llamá al 911.
       </p>
     </header>
 
-    <div class="row">
-      @for (place of places; track place.id) {
-        <div class="col-12 col-lg-4 d-flex">
-          <article class="place-card">
-            <div class="place-map">
-              <iframe
-                [src]="place.mapSrc"
-                [title]="'Mapa de ' + place.name"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                allowfullscreen
-              ></iframe>
-            </div>
-            <div class="place-body">
-              <h3>{{ place.name }}</h3>
-              <p>{{ place.about }}</p>
-              <ul class="place-meta">
-                <li><span>Dirección</span> {{ place.address }}</li>
-                <li>
-                  <span>Teléfono</span>
-                  <a [href]="place.phoneHref">{{ place.phone }}</a>
-                </li>
-                @if (place.email) {
-                  <li>
-                    <span>Email</span>
-                    <a [href]="'mailto:' + place.email">{{ place.email }}</a>
-                  </li>
-                }
-              </ul>
-              <a class="place-link" [href]="place.website" target="_blank" rel="noopener noreferrer">
-                Ir al sitio web
-              </a>
-            </div>
-          </article>
+    <div class="places-panel">
+      <div class="place-list" role="tablist" aria-label="Organismos de ayuda">
+        @for (place of places; track place.id) {
+          <button
+            type="button"
+            class="place-tab"
+            role="tab"
+            [class.is-active]="place.id === selectedId"
+            [attr.aria-selected]="place.id === selectedId"
+            (click)="selectPlace(place.id)"
+          >
+            <span class="place-tab-city">{{ place.city }}</span>
+            <strong>{{ place.shortName }}</strong>
+            <span class="place-tab-hours">{{ place.hours }}</span>
+          </button>
+        }
+      </div>
+
+      <article class="place-detail">
+        <div class="place-map">
+          <iframe
+            [src]="selected.mapSrc"
+            [title]="'Mapa de ' + selected.name"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+          ></iframe>
         </div>
-      }
+        <div class="place-body">
+          <p class="place-badge">{{ selected.city }} · {{ selected.hours }}</p>
+          <h3>{{ selected.name }}</h3>
+          <p>{{ selected.about }}</p>
+          <ul class="place-meta">
+            <li><span>Dirección</span> {{ selected.address }}</li>
+            <li>
+              <span>Teléfono</span>
+              <a [href]="selected.phoneHref">{{ selected.phone }}</a>
+            </li>
+            @if (selected.email) {
+              <li>
+                <span>Email</span>
+                <a [href]="'mailto:' + selected.email">{{ selected.email }}</a>
+              </li>
+            }
+          </ul>
+          <div class="place-actions">
+            <a class="place-btn place-btn--primary" [href]="selected.phoneHref">Llamar</a>
+            <a class="place-btn" [href]="selected.directionsUrl" target="_blank" rel="noopener noreferrer">
+              Cómo llegar
+            </a>
+            <a class="place-btn" [href]="selected.website" target="_blank" rel="noopener noreferrer">
+              Sitio web
+            </a>
+            @if (selected.email) {
+              <a class="place-btn" [href]="'mailto:' + selected.email">Email</a>
+            }
+          </div>
+        </div>
+      </article>
     </div>
   </div>
 </section>

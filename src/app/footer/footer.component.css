@@ -1,5 +1,110 @@
-footer {
-    position: relative;
-    bottom: 0;
-    width: 100%;
+:host {
+  display: block;
+  font-family: Manrope, "Segoe UI", sans-serif;
+}
+
+.site-foot {
+  margin-top: 0.5rem;
+  color: #f8eef3;
+  background:
+    linear-gradient(180deg, #6a3b50 0%, #5e3548 100%);
+}
+
+.site-foot-inner {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 0.8fr 1.1fr;
+  gap: 1.5rem;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 1.5rem;
+}
+
+.foot-brand {
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+}
+
+.foot-brand img {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.foot-brand strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 1.05rem;
+}
+
+.foot-brand p,
+.site-foot p {
+  margin: 0;
+  color: rgba(248, 238, 243, 0.82);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.site-foot h2 {
+  margin: 0 0 0.7rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #d08aa6;
+}
+
+.site-foot ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-foot li {
+  margin: 0 0 0.45rem;
+}
+
+.site-foot a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #fff;
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.site-foot a:hover,
+.site-foot a:focus {
+  color: #f3c6d7;
+  text-decoration: underline;
+}
+
+.site-foot svg {
+  width: 0.95rem;
+  height: 0.95rem;
+  flex-shrink: 0;
+}
+
+.site-foot-bar {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.85rem 1.25rem 1rem;
+  text-align: center;
+}
+
+.site-foot-bar a {
+  color: #f3c6d7;
+}
+
+@media (max-width: 991.98px) {
+  .site-foot-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .site-foot-inner {
+    grid-template-columns: 1fr;
+  }
 }

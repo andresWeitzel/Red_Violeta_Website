@@ -1,1 +1,74 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --rv-ink: #3a2430;
+  --rv-muted: #74606a;
+  --rv-paper: #f9f4f6;
+  --rv-card: #ffffff;
+  --rv-primary: #b45c7e;
+  --rv-primary-dark: #934866;
+  --rv-accent: #d08aa6;
+  --rv-soft: #f8eef3;
+  --rv-line: #ecd7e0;
+  --rv-deep: #5e3548;
+  --rv-shadow: 0 12px 30px rgba(58, 36, 48, 0.07);
+}
+
+body {
+  background-color: var(--rv-paper);
+  background-image:
+    radial-gradient(ellipse 90% 55% at 100% -8%, rgba(180, 92, 126, 0.16), transparent 52%),
+    radial-gradient(ellipse 70% 45% at -10% 110%, rgba(208, 138, 166, 0.18), transparent 50%),
+    linear-gradient(180deg, #fbf7f8 0%, #f6eef2 100%);
+  background-attachment: fixed;
+  color: var(--rv-ink);
+}
+
+.bg-success {
+  background-color: var(--rv-deep) !important;
+}
+
+.btn-success {
+  background-color: var(--rv-primary) !important;
+  border-color: var(--rv-primary) !important;
+}
+
+.btn-success:hover,
+.btn-success:focus {
+  background-color: var(--rv-primary-dark) !important;
+  border-color: var(--rv-primary-dark) !important;
+}
+
+.text-success {
+  color: var(--rv-primary-dark) !important;
+}
+
+.border-success {
+  border-color: var(--rv-accent) !important;
+}
+
+.badge-success {
+  background-color: var(--rv-primary) !important;
+}
+
+.alert-success {
+  color: var(--rv-ink);
+  background-color: var(--rv-soft);
+  border-color: var(--rv-line);
+}
+
+.site-nav {
+  background: rgba(255, 250, 252, 0.92);
+  border-bottom: 1px solid var(--rv-line);
+  box-shadow: 0 2px 16px rgba(58, 36, 48, 0.05);
+  backdrop-filter: blur(8px);
+}
+
+.site-nav .navbar-brand,
+.site-nav .nav-link {
+  color: var(--rv-ink) !important;
+}
+
+.site-nav .nav-link:hover,
+.site-nav .nav-link:focus,
+.site-nav .navbar-brand:hover {
+  color: var(--rv-primary-dark) !important;
+}

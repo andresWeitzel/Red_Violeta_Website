@@ -13,23 +13,38 @@
         <div class="col-12 col-md-6 col-xl-3 d-flex">
           <article class="help-card">
             <p class="help-label">Llamá al</p>
-            <a class="help-number" [href]="'tel:' + line.number">{{ line.number }}</a>
+            <a class="help-number" [href]="line.phoneHref" [attr.aria-label]="'Llamar al ' + line.number">
+              {{ line.number }}
+            </a>
             <h3>{{ line.title }}</h3>
-            <p>{{ line.description }}</p>
+            <p class="help-desc">{{ line.description }}</p>
             <div class="help-actions">
-              <a class="help-btn help-btn--primary" [href]="'tel:' + line.number">Llamar</a>
+              <a
+                class="help-btn help-btn--primary"
+                [href]="line.phoneHref"
+                [attr.aria-label]="'Llamar al ' + line.number"
+              >
+                Llamar
+              </a>
               @if (line.whatsapp) {
                 <a
                   class="help-btn"
                   [href]="'https://wa.me/' + line.whatsapp"
                   target="_blank"
                   rel="noopener noreferrer"
+                  [attr.aria-label]="'WhatsApp de la línea ' + line.number"
                 >
                   WhatsApp
                 </a>
               }
               @if (line.email) {
-                <a class="help-btn" [href]="'mailto:' + line.email">Email</a>
+                <a
+                  class="help-btn"
+                  [href]="'mailto:' + line.email"
+                  [attr.aria-label]="'Enviar email a la línea ' + line.number"
+                >
+                  Email
+                </a>
               }
             </div>
           </article>

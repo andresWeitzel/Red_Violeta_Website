@@ -4,7 +4,7 @@
 }
 
 .places-section {
-  padding: 1.5rem 0 3rem;
+  padding: 1.5rem 0 2.5rem;
 }
 
 .places-wrap {
@@ -23,7 +23,7 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #8a245f;
+  color: var(--rv-primary, #b45c7e);
 }
 
 .section-heading h2 {
@@ -40,21 +40,81 @@
   line-height: 1.55;
 }
 
-.place-card {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin-bottom: 1.25rem;
-  overflow: hidden;
+.places-panel {
+  display: grid;
+  grid-template-columns: minmax(220px, 280px) 1fr;
+  gap: 1rem;
+  align-items: stretch;
+  padding: 0.85rem;
   background: #fff;
   border: 1px solid #eadfe6;
-  border-radius: 18px;
-  box-shadow: 0 10px 28px rgba(36, 28, 34, 0.06);
+  border-radius: 22px;
+  box-shadow: 0 16px 40px rgba(36, 28, 34, 0.08);
+}
+
+.place-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.place-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 14px;
+  background: #f7f3f5;
+  color: #241c22;
   text-align: left;
+  cursor: pointer;
+}
+
+.place-tab strong {
+  margin: 0.15rem 0;
+  font-size: 0.98rem;
+}
+
+.place-tab-city,
+.place-tab-hours {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #5e5560;
+}
+
+.place-tab:hover,
+.place-tab:focus {
+  border-color: #d9c5d0;
+  outline: none;
+}
+
+.place-tab.is-active {
+  background: var(--rv-primary, #b45c7e);
+  border-color: var(--rv-primary, #b45c7e);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(109, 74, 90, 0.16);
+}
+
+.place-tab.is-active .place-tab-city,
+.place-tab.is-active .place-tab-hours {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.place-detail {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  min-height: 360px;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #faf6f8;
 }
 
 .place-map {
-  aspect-ratio: 16 / 10;
+  min-height: 280px;
   background: #efe7eb;
 }
 
@@ -67,16 +127,24 @@
 
 .place-body {
   display: flex;
-  flex: 1;
   flex-direction: column;
-  padding: 1.15rem 1.2rem 1.25rem;
+  padding: 1.2rem 1.25rem 1.3rem;
+}
+
+.place-badge {
+  margin: 0 0 0.45rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--rv-primary, #b45c7e);
 }
 
 .place-body h3 {
   margin: 0 0 0.5rem;
-  font-size: 1.02rem;
-  font-weight: 700;
-  line-height: 1.35;
+  font-size: 1.08rem;
+  font-weight: 800;
+  line-height: 1.3;
   color: #241c22;
 }
 
@@ -94,7 +162,7 @@
 }
 
 .place-meta li {
-  margin: 0 0 0.45rem;
+  margin: 0 0 0.5rem;
   color: #241c22;
   font-size: 0.9rem;
   line-height: 1.4;
@@ -110,34 +178,61 @@
 }
 
 .place-meta a {
-  color: #1f7a4c;
+  color: var(--rv-primary, #b45c7e);
   font-weight: 600;
   word-break: break-word;
 }
 
-.place-meta a:hover,
-.place-meta a:focus {
-  color: #16603b;
+.place-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-top: auto;
 }
 
-.place-link {
+.place-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-height: 42px;
-  margin-top: auto;
-  padding: 0.4rem 0.9rem;
-  border: 1px solid #1f7a4c;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #eadfe6;
   border-radius: 999px;
-  color: #1f7a4c;
-  font-size: 0.9rem;
+  background: #fff;
+  color: #241c22;
+  font-size: 0.84rem;
   font-weight: 700;
   text-decoration: none;
 }
 
-.place-link:hover,
-.place-link:focus {
-  background: #1f7a4c;
+.place-btn--primary {
+  background: var(--rv-primary, #b45c7e);
+  border-color: var(--rv-primary, #b45c7e);
   color: #fff;
+}
+
+.place-btn:hover,
+.place-btn:focus {
+  border-color: var(--rv-primary, #b45c7e);
+  color: var(--rv-primary, #b45c7e);
   text-decoration: none;
+}
+
+.place-btn--primary:hover,
+.place-btn--primary:focus {
+  background: var(--rv-primary-dark, #934866);
+  border-color: var(--rv-primary-dark, #934866);
+  color: #fff;
+}
+
+@media (max-width: 991.98px) {
+  .places-panel,
+  .place-detail {
+    grid-template-columns: 1fr;
+  }
+
+  .place-map {
+    min-height: 220px;
+    aspect-ratio: 16 / 10;
+  }
 }

@@ -20,28 +20,24 @@
     <div class="carousel-inner">
       @for (slide of slides; track slide.id) {
         <div class="carousel-item" [class.active]="$first">
-          @if (slide.kind === 'graphic') {
-            <div class="hero-frame hero-frame--graphic">
-              <div class="hero-blob" aria-hidden="true"></div>
-              <div class="hero-copy">
-                <p class="hero-kicker">{{ slide.kicker }}</p>
-                <h1>{{ slide.title }}</h1>
-                <p class="hero-text">{{ slide.text }}</p>
-                <a class="hero-cta" routerLink="/formulario-denuncias">Registrar denuncia</a>
-              </div>
-            </div>
-          } @else {
-            <div class="hero-frame hero-frame--photo">
-              <img [src]="slide.src" [alt]="slide.alt" />
-              <div class="hero-scrim" aria-hidden="true"></div>
-              <div class="hero-copy hero-copy--overlay">
-                <p class="hero-kicker">{{ slide.kicker }}</p>
+          <div class="hero-frame hero-frame--photo">
+            <img [src]="slide.src" [alt]="slide.alt" />
+            <div class="hero-scrim" aria-hidden="true"></div>
+            <div class="hero-copy hero-copy--overlay">
+              <p class="hero-kicker">{{ slide.kicker }}</p>
+              @if (slide.titleLines) {
+                <h1 class="hero-title-poster">
+                  @for (line of slide.titleLines; track line) {
+                    <span>{{ line }}</span>
+                  }
+                </h1>
+              } @else {
                 <h2>{{ slide.title }}</h2>
-                <p class="hero-text">{{ slide.text }}</p>
-                <a class="hero-cta" routerLink="/formulario-denuncias">Registrar denuncia</a>
-              </div>
+              }
+              <p class="hero-text">{{ slide.text }}</p>
+              <a class="hero-cta" routerLink="/formulario-denuncias">Registrar denuncia</a>
             </div>
-          }
+          </div>
         </div>
       }
     </div>
