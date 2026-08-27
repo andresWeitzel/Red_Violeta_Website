@@ -1,15 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-carrousel',
   templateUrl: './carrousel.component.html',
-  styleUrls: ['./carrousel.component.css']
+  styleUrl: './carrousel.component.css',
 })
-export class CarrouselComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+export class CarrouselComponent {}

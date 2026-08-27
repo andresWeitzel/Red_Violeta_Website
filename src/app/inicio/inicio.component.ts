@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { CardComponent } from '../card/card.component';
+import { CarrouselComponent } from '../carrousel/carrousel.component';
+import { MapComponent } from '../map/map.component';
 
 @Component({
   selector: 'app-inicio',
+  imports: [CarrouselComponent, CardComponent, MapComponent],
   templateUrl: './inicio.component.html',
-  styleUrls: ['./inicio.component.css']
+  styleUrl: './inicio.component.css',
 })
-export class InicioComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+export class InicioComponent {}

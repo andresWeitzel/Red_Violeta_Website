@@ -1,15 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-formulario-denuncias-respuesta',
   templateUrl: './formulario-denuncias-respuesta.component.html',
-  styleUrls: ['./formulario-denuncias-respuesta.component.css']
+  styleUrl: './formulario-denuncias-respuesta.component.css',
 })
-export class FormularioDenunciasRespuestaComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+export class FormularioDenunciasRespuestaComponent {}
