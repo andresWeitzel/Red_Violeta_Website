@@ -1,15 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-card',
+  imports: [RouterLink],
   templateUrl: './card.component.html',
-  styleUrls: ['./card.component.css']
+  styleUrl: './card.component.css',
 })
-export class CardComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+export class CardComponent {}

@@ -36,13 +36,12 @@
 
 | Tecnologías | Versión |
 | ------------- | ------------- |
-| Angular |   9.1.12 |
+| Angular |   22.1.x |
 | Bootstrap | 4.5.x  |
 | Netlify | - |
 | Visual Studio Code | 1.51.1  |
 | Git | 2.29.1.windows.1  |
-| Angular CLI | 9.1.0 |
-| Netlify CLI | 2.69.10 |
+| Angular CLI | 22.1.x |
 
 </br>
 

@@ -1,35 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-formulario-denuncias',
   templateUrl: './formulario-denuncias.component.html',
-  styleUrls: ['./formulario-denuncias.component.css']
+  styleUrl: './formulario-denuncias.component.css',
 })
-export class FormularioDenunciasComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-    (function() {
-      'use strict';
-      window.addEventListener('load', function() {
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        var forms = document.getElementsByClassName('needs-validation');
-        // Loop over them and prevent submission
-        var validation = Array.prototype.filter.call(forms, function(form) {
-          form.addEventListener('submit', function(event) {
-            if (form.checkValidity() === false) {
-              event.preventDefault();
-              event.stopPropagation();
-            }else{
-              alert("Si el email proporcionado es correcto nos comunicaremos lo antes posible. La denuncia estará sujeta a comprobación.Muchas Gracias y Recuerdé que las lineas de comunicación siempre estan disponibles!!!(PROCESO DE SIMULACIÓN DE CARGA DE DENUNCIA)");
-            }
-            form.classList.add('was-validated');
-
-          }, false);
-        });
-      }, false);
-    })();
+export class FormularioDenunciasComponent {
+  onSubmit(event: Event): void {
+    const form = event.target as HTMLFormElement;
+    if (!form.checkValidity()) {
+      event.preventDefault();
+      event.stopPropagation();
+    } else {
+      event.preventDefault();
+      alert(
+        'Si el email proporcionado es correcto nos comunicaremos lo antes posible. La denuncia estará sujeta a comprobación.Muchas Gracias y Recuerdé que las lineas de comunicación siempre estan disponibles!!!(PROCESO DE SIMULACIÓN DE CARGA DE DENUNCIA)'
+      );
+    }
+    form.classList.add('was-validated');
   }
-
 }
