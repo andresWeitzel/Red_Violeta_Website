@@ -8,6 +8,6 @@ export const routes: Routes = [
   { path: 'inicio', component: InicioComponent },
   { path: 'formulario-denuncias', component: FormularioDenunciasComponent },
   { path: 'novedades', component: NovedadesComponent },
-  { path: '', component: InicioComponent, pathMatch: 'full' },
+  { path: '', redirectTo: 'inicio', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];

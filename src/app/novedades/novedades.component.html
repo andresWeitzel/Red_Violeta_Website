@@ -1,79 +1,88 @@
-<section class="container text-center">
+<div class="novedades-page">
+  <section class="news-hero" aria-labelledby="news-title">
+    <header class="section-heading">
+      <p class="section-kicker">Actualidad</p>
+      <h1 id="news-title">Novedades y recursos</h1>
+      <p class="section-lead">
+        Notas, programas y documentos para ampliar información sobre violencias, discriminación y políticas de género.
+      </p>
+    </header>
+  </section>
 
-    <br><br>
-    <!--CARD PLAN DISCRIMINACION-->
-    <a href="https://www.argentina.gob.ar/noticias/plan-nacional-contra-la-discriminacion-siguen-los-encuentros-federales" target="blank">
-        <div class="card bg-success text-white mt-5">
-            <img src="../assets/violencia4.jpg" class="card-img" alt="...">
-            <div class="card-img-overlay">
-                <div class="bg-sucess">
-                    <h4 class="card-title">PLAN NACIONAL CONTRA LA DISCRIMINACIÓN</h4>
-                    <h6 class="card-text  d-none d-sm-none  d-md-block">Esta semana comenzó un nuevo ciclo de los Foros, con 70 organizaciones de la región Cuyo y Patagonia..</h6>
-                    <span class="badge badge-success">Ministerio de Justicia y Derechos Humanos</span>
-                </div>
+  <section class="stories-section" aria-labelledby="stories-title">
+    <div class="news-wrap">
+      <header class="block-heading">
+        <p>Notas</p>
+        <h2 id="stories-title">Lo que está pasando</h2>
+      </header>
+
+      <div class="stories-grid">
+        @for (item of news; track item.url) {
+          <a
+            class="story-card"
+            [href]="item.url"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="story-media" [class.story-media--plain]="!item.image">
+              @if (item.image) {
+                <img [src]="item.image" [alt]="item.imageAlt || ''" />
+                <div class="story-scrim" aria-hidden="true"></div>
+              }
+              <span class="story-tag">{{ item.tag }}</span>
             </div>
-        </div>
-    </a>
-
-    <!--FIN CARD PLAN DISCRIMINACION-->
-    <!--CARD IGUALDAD DE GENERO-->
-    <a href="http://www.cifi.com/2019/04/05/compromiso-con-la-igualdad-de-genero/" target="blank">
-        <div class="card bg-success text-white mt-5">
-            <img src="../assets/igualdad.jpg" class="card-img" alt="...">
-            <div class="card-img-overlay text-center">
-                <div class="bg-sucess text-white">
-                    <h4 class="card-title">COMPROMISO CON LA IGUALDAD DE GÉNERO</h4>
-                    <h6 class="card-text d-none d-sm-none  d-md-block">En el mes de la mujer, CIFI reforzó su compromiso con la equidad de género al adoptar oficialmente su Política de Igualdad de Género</h6>
-                    <span class="badge badge-success">CIFI</span>
-                </div>
-
+            <div class="story-body">
+              <p class="story-source">{{ item.source }}</p>
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.excerpt }}</p>
+              <span class="story-link">Leer nota</span>
             </div>
-        </div>
-
-    </a>
-
-    <!--FIN CARD IGUALDAD DE GENERO-->
-    <br><br>
-
-    <h2><span class="badge badge-success text-center">DOCUMENTACIÓN Y PROGRAMAS</span></h2>
-
-    <br>
-    <hr>
-    <!--MEDIA BODY IGUALDAD-->
-    <div class="media">
-
-        <img src="../assets/igualdad-de-genero.svg" width="100px" class="mr-3" alt="...">
-        <div class="media-body text-left">
-            <h5 class="mt-0  text-center">Comunidades sin Violencias</h5><br>El Programa “Comunidades sin Violencias” busca fortalecer los abordajes contra las violencias por razones de género en los 135 municipios, a la vez que apunta a trabajar sobre el diseño institucional de cada
-            espacio para la gestión y el desarrollo local de políticas de género.<br> Cuenta con tres líneas de trabajo: una fortalecer los equipos locales de cada municipio; en segundo lugar construir o remodelar infraestructura para ampliar la Red de
-            Hogares de Protección Integral que albergan a mujeres y familias en situación de violencia y las casas de medio camino; y por último desarrollar vías de acceso al trabajo para mujeres y LGTBI+.<br>
-            <div class="text-center mt-4">
-                <a href="http://ministeriodelasmujeres.gba.gob.ar/img/ext/comunidades.pdf" target="blank"><button class="btn btn-success text-center" ><span class="badge badge-success text-center">Ver Documento PDF </span></button></a>
-            </div>
-        </div>
+          </a>
+        }
+      </div>
     </div>
+  </section>
 
-    <!--FIN MEDIA BODY IGUALDAD-->
+  <section class="docs-section" aria-labelledby="docs-title">
+    <div class="news-wrap">
+      <header class="block-heading">
+        <p>Documentación</p>
+        <h2 id="docs-title">Programas e informes</h2>
+        <span class="block-lead">Material de consulta para entender políticas públicas y cómo se trabajan en el territorio.</span>
+      </header>
 
-    <hr>
-
-    <!--MEDIA BODY DISCRIMINACION-->
-    <div class="media mt-3">
-        <a class="mr-3" href="#">
-            <img src="../assets/racism.svg" width="100px" class="mr-3" alt="...">
-        </a>
-        <div class="media-body text-left">
-            <h5 class="mt-0 text-center">Memoria de Gestión INADI 2020</h5><br> En un año signado por la pandemia y la crisis económica, en el Instituto Nacional contra la Discriminación, la Xenofobia y el Racismo (INADI) trabajo desde el primer día para aportar a la contención social
-            de los sectores más vulnerables en este momento de fragilidad.<br>Invitamos al público en general a leer y revisar nuestra Memoria Anual completa disponible en esta misma página.<br>
-            <div class="text-center mt-4">
-                <a href="https://www.argentina.gob.ar/sites/default/files/memoria_anual_del_inadi_22-12-2020-convertido.pdf" target="blank"><button class="btn btn-success text-center" ><span class="badge badge-success text-center">Ver Documento PDF </span></button></a>
-            </div>
-        </div>
+      <div class="docs-grid">
+        @for (doc of documents; track doc.url) {
+          <article class="doc-card">
+            <span class="doc-tag">{{ doc.tag }}</span>
+            <h3>{{ doc.title }}</h3>
+            <p>{{ doc.description }}</p>
+            <a class="doc-btn" [href]="doc.url" target="_blank" rel="noopener noreferrer">
+              Abrir PDF
+            </a>
+          </article>
+        }
+      </div>
     </div>
-    <!--FIN MEDIA BODY DISCRIMINACION-->
-    <hr>
+  </section>
 
-    <br><br>
+  <section class="news-cta-section">
+    <div class="news-cta">
+      <div>
+        <h2>¿Querés dejar registro de una denuncia?</h2>
+        <p>Completá el formulario y adjuntá la mayor documentación posible para agilizar el seguimiento.</p>
+      </div>
+      <a class="news-cta-btn" routerLink="/formulario-denuncias">Registrar denuncia</a>
+    </div>
+  </section>
 
-
-</section>
+  <aside class="privacy-note">
+    <div class="privacy-wrap">
+      <strong>Si no estás en un lugar seguro</strong>
+      <p>
+        Preferí una llamada. Si usás esta página en una computadora o celular compartido, borrá el historial cuando
+        termines.
+      </p>
+    </div>
+  </aside>
+</div>

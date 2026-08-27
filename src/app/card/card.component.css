@@ -95,8 +95,7 @@
 }
 
 .help-actions {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   gap: 0.5rem;
   width: 100%;
   margin-top: auto;
@@ -104,19 +103,27 @@
 
 .help-btn {
   display: inline-flex;
+  flex: 1 1 0;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  gap: 0.4rem;
   min-width: 0;
-  min-height: 40px;
-  padding: 0.4rem 0.5rem;
+  min-height: 42px;
+  padding: 0.45rem 0.75rem;
   border: 1px solid #eadfe6;
   border-radius: 999px;
   color: #241c22;
-  font-size: 0.82rem;
+  font-size: 0.84rem;
   font-weight: 700;
   text-decoration: none;
   background: #fff;
+  white-space: nowrap;
+}
+
+.help-btn svg {
+  width: 0.9rem;
+  height: 0.9rem;
+  flex-shrink: 0;
 }
 
 .help-btn:hover,
@@ -127,7 +134,6 @@
 }
 
 .help-btn--primary {
-  grid-column: 1 / -1;
   background: var(--rv-primary, #b45c7e);
   border-color: var(--rv-primary, #b45c7e);
   color: #fff;
