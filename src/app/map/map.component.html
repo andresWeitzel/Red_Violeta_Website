@@ -20,7 +20,8 @@
             (click)="selectPlace(place.id)"
           >
             <span class="place-tab-city">{{ place.city }}</span>
-            <strong>{{ place.shortName }}</strong>
+            <strong class="place-tab-full">{{ place.shortName }}</strong>
+            <strong class="place-tab-compact">{{ place.compactName }}</strong>
             <span class="place-tab-hours">{{ place.hours }}</span>
           </button>
         }

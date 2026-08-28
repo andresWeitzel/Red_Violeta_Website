@@ -1,21 +1,33 @@
 <!--HEADER-->
 <header>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light site-nav fixed-top">
-        <div class="container">
-            <a class="navbar-brand" routerLink="/inicio">
+    <nav class="navbar site-nav fixed-top" [class.is-menu-open]="menuOpen">
+        <div class="container nav-shell">
+            <a class="navbar-brand" routerLink="/inicio" (click)="closeMenu()">
                 <img src="assets/proteger.png" width="32" height="32" alt="" class="d-inline-block align-top brand-mark"> Denuncia Online
             </a>
 
-            <button class="navbar-toggler mr-3" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
+            <button
+              class="nav-toggle"
+              type="button"
+              [class.is-open]="menuOpen"
+              [attr.aria-expanded]="menuOpen"
+              aria-controls="siteMenu"
+              [attr.aria-label]="menuOpen ? 'Cerrar menú' : 'Abrir menú'"
+              (click)="toggleMenu()"
+            >
+              <span></span>
             </button>
 
-
-            <div class="collapse navbar-collapse text-center" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
+            <div class="nav-drawer" id="siteMenu" [class.is-open]="menuOpen">
+                <div class="nav-drawer-head">
+                    <p>Menú</p>
+                    <button type="button" class="nav-drawer-close" (click)="closeMenu()" aria-label="Cerrar menú">
+                      Cerrar
+                    </button>
+                </div>
+                <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/inicio" routerLinkActive="is-active" ariaCurrentWhenActive="page">Inicio</a>
+                        <a class="nav-link" routerLink="/inicio" routerLinkActive="is-active" ariaCurrentWhenActive="page" (click)="closeMenu()">Inicio</a>
                     </li>
                     <li class="nav-item">
                         <button
@@ -29,18 +41,19 @@
                         </button>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/novedades" routerLinkActive="is-active" ariaCurrentWhenActive="page">Novedades</a>
+                        <a class="nav-link" routerLink="/novedades" routerLinkActive="is-active" ariaCurrentWhenActive="page" (click)="closeMenu()">Novedades</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/formulario-denuncias" routerLinkActive="is-active" ariaCurrentWhenActive="page">Registrar Denuncia</a>
+                        <a class="nav-link" routerLink="/formulario-denuncias" routerLinkActive="is-active" ariaCurrentWhenActive="page" (click)="closeMenu()">Registrar Denuncia</a>
                     </li>
-
                 </ul>
             </div>
-
         </div>
     </nav>
-    <!-- Fin Navigation -->
+
+    @if (menuOpen) {
+      <button type="button" class="nav-backdrop" aria-label="Cerrar menú" (click)="closeMenu()"></button>
+    }
 
     <dialog
       #helpDialog

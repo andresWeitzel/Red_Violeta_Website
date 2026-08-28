@@ -1,5 +1,7 @@
-import { Component, ElementRef, viewChild } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Component, ElementRef, HostListener, inject, viewChild } from '@angular/core';
+import { NavigationStart, Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
@@ -8,11 +10,37 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {
+  private readonly router = inject(Router);
   private readonly helpDialog = viewChild<ElementRef<HTMLDialogElement>>('helpDialog');
+  private scrollAtOpen = 0;
+
+  menuOpen = false;
+
+  constructor() {
+    this.router.events
+      .pipe(
+        filter((event): event is NavigationStart => event instanceof NavigationStart),
+        takeUntilDestroyed(),
+      )
+      .subscribe(() => this.closeMenu());
+  }
+
+  toggleMenu(): void {
+    if (this.menuOpen) {
+      this.closeMenu();
+      return;
+    }
+    this.menuOpen = true;
+    this.scrollAtOpen = window.scrollY;
+  }
+
+  closeMenu(): void {
+    this.menuOpen = false;
+  }
 
   openHelp(): void {
+    this.closeMenu();
     this.helpDialog()?.nativeElement.showModal();
-    this.closeMobileNav();
   }
 
   closeHelp(): void {
@@ -25,21 +53,23 @@ export class NavbarComponent {
     }
   }
 
-  private closeMobileNav(): void {
-    const collapse = document.getElementById('navbarResponsive');
-    if (!collapse?.classList.contains('show')) {
-      return;
+  @HostListener('window:scroll')
+  onWindowScroll(): void {
+    if (this.menuOpen && Math.abs(window.scrollY - this.scrollAtOpen) > 8) {
+      this.closeMenu();
     }
+  }
 
-    const jquery = (
-      window as unknown as { $?: (el: HTMLElement) => { collapse: (action: string) => void } }
-    ).$;
-
-    if (jquery) {
-      jquery(collapse).collapse('hide');
-      return;
+  @HostListener('window:resize')
+  onWindowResize(): void {
+    if (window.innerWidth >= 992) {
+      this.closeMenu();
     }
+  }
 
-    collapse.classList.remove('show');
+  @HostListener('document:keydown.escape')
+  onEscape(): void {
+    this.closeMenu();
+    this.closeHelp();
   }
 }

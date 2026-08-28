@@ -4,6 +4,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 export interface HelpPlace {
   id: string;
   shortName: string;
+  compactName: string;
   city: string;
   hours: string;
   name: string;
@@ -30,6 +31,7 @@ export class MapComponent {
     {
       id: 'ministerio',
       shortName: 'Ministerio de las Mujeres',
+      compactName: 'Ministerio',
       city: 'La Plata',
       hours: 'Consultá horarios en el sitio',
       name: 'Ministerio de las Mujeres, Políticas de Género y Diversidad Sexual',
@@ -49,6 +51,7 @@ export class MapComponent {
     {
       id: 'inadi',
       shortName: 'INADI',
+      compactName: 'INADI',
       city: 'CABA',
       hours: 'Consultá horarios en el sitio',
       name: 'Instituto Nacional contra la Discriminación, la Xenofobia y el Racismo',
@@ -66,6 +69,7 @@ export class MapComponent {
     {
       id: 'ovd',
       shortName: 'OVD',
+      compactName: 'OVD',
       city: 'CABA',
       hours: 'Atención las 24 horas',
       name: 'Oficina de Violencia Doméstica — Corte Suprema de Justicia',
