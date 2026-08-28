@@ -212,7 +212,7 @@ Desktop captures in `public/assets/repository/`. **`01-cover-inicio.png`** is al
 
 * Home official sites: 3 cards on mobile; **6** on desktop (≥992 px) so “See more” sits on the **second** row.
 * News filters: search + Type / Year selects.
-* Form: identity or anonymous, email, kind, account ≥30 chars, ≥1 file, consent. Valid submit → demo dialog → helplines page.
+* Form: identity or anonymous, email, kind, comment ≥10 chars, optional files, consent. Valid submit → confirm dialog → helplines page.
 
 </details>
 

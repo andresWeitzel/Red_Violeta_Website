@@ -15,7 +15,7 @@
           <p class="block-help">Si no es seguro identificarte, podés no dar el nombre.</p>
 
           <label class="check-row">
-            <input type="checkbox" formControlName="anonymous" />
+            <input id="anonymous" type="checkbox" formControlName="anonymous" />
             <span>Prefiero no dar mi nombre</span>
           </label>
 
@@ -38,7 +38,7 @@
           <div class="field-grid">
             <div class="field">
               <label for="edad">Edad <em>opcional</em></label>
-              <input id="edad" type="number" formControlName="edad" min="1" max="120" inputmode="numeric" />
+              <input id="edad" type="number" formControlName="edad" inputmode="numeric" />
             </div>
             <div class="field">
               <label for="localidad">Localidad <em>opcional</em></label>
@@ -76,32 +76,32 @@
             }
           </div>
           <div class="field" [class.has-error]="hasError('descripcion')">
-            <label for="descripcion">Relato</label>
+            <label for="descripcion">Comentario</label>
             <textarea
               id="descripcion"
               formControlName="descripcion"
               rows="4"
-              placeholder="Contá qué pasó, cuándo, dónde y si hay riesgo ahora. Cuanto más preciso, mejor el seguimiento."
+              placeholder="Contá qué pasó, cuándo y dónde, o lo que quieras dejar asentado."
             ></textarea>
             @if (hasError('descripcion')) {
-              <p class="field-error">Escribí al menos 30 caracteres para que se pueda entender la situación.</p>
+              <p class="field-error">Escribí un comentario de al menos 10 caracteres.</p>
             }
           </div>
         </fieldset>
 
         <fieldset class="form-block">
-          <legend>Archivos para comprobar</legend>
-          <p class="block-help">Fotos, capturas, PDFs o audios. Hasta {{ maxFiles }} archivos, {{ maxFileMb }} MB cada uno.</p>
-          <label class="file-drop" [class.has-error]="submitted && !files.length">
+          <legend>Archivos para comprobar <em>opcional</em></legend>
+          <p class="block-help">
+            Si tenés fotos, capturas, PDFs o audios, podés adjuntarlos para respaldar lo que contás. No hace falta para enviar.
+            Hasta {{ maxFiles }} archivos, {{ maxFileMb }} MB cada uno.
+          </p>
+          <label class="file-drop" [class.has-error]="!!fileError">
             <input type="file" [accept]="accept" multiple (change)="onFiles($event)" />
             <strong>Elegí archivos</strong>
             <span>PDF, imagen, Word o audio/video corto</span>
           </label>
           @if (fileError) {
             <p class="field-error">{{ fileError }}</p>
-          }
-          @if (submitted && !files.length && !fileError) {
-            <p class="field-error">Adjuntá al menos un archivo.</p>
           }
           @if (files.length) {
             <ul class="file-list">
@@ -116,7 +116,7 @@
         </fieldset>
 
         <label class="check-row" [class.has-error]="hasError('consent')">
-          <input type="checkbox" formControlName="consent" />
+          <input id="consent" type="checkbox" formControlName="consent" />
           <span>Entiendo que esto no reemplaza una denuncia policial o judicial.</span>
         </label>
         @if (hasError('consent')) {

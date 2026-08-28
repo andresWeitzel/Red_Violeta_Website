@@ -342,8 +342,8 @@ En mobile: menú hamburguesa (drawer a la derecha). En desktop: links en la barr
 
 **Formulario (demo)**
 
-* Datos (o anónimo), email obligatorio, tipo, relato (≥ 30 caracteres), al menos un archivo, consentimiento.
-* Mobile: campos de a dos columnas, relato más bajo, menos padding.
+* Datos (o anónimo), email obligatorio, tipo, comentario (≥ 10 caracteres), archivos opcionales, consentimiento.
+* Mobile: campos de a dos columnas, comentario más bajo, menos padding.
 * Enviar válido → diálogo de demostración. **No** se manda correo a líneas reales.
 * Sí / No → `/lineas-de-atencion`.
 

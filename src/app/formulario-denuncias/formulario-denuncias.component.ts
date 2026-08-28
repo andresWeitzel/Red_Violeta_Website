@@ -1,5 +1,5 @@
 import { Component, ElementRef, inject, viewChild } from '@angular/core';
-import { AbstractControl, FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import {
   DENUNCIA_ACCEPT,
@@ -18,6 +18,7 @@ import {
 export class FormularioDenunciasComponent {
   private readonly formBuilder = inject(FormBuilder);
   private readonly router = inject(Router);
+  private readonly host = inject(ElementRef);
   private readonly confirmDialog = viewChild('confirmDialog', { read: ElementRef });
 
   readonly kinds = DENUNCIA_KINDS;
@@ -29,24 +30,21 @@ export class FormularioDenunciasComponent {
   fileError = '';
   submitted = false;
 
-  readonly form = this.formBuilder.group(
-    {
-      anonymous: [false],
-      nombre: [''],
-      apellido: [''],
-      edad: [''],
-      email: ['', [Validators.required, Validators.email]],
-      telefono: [''],
-      localidad: [''],
-      kind: ['', Validators.required],
-      descripcion: ['', [Validators.required, Validators.minLength(30)]],
-      consent: [false, Validators.requiredTrue],
-    },
-    { validators: [identityValidator] },
-  );
+  readonly form = this.formBuilder.group({
+    anonymous: [false],
+    nombre: [''],
+    apellido: [''],
+    edad: [''],
+    email: ['', [Validators.required, Validators.email]],
+    telefono: [''],
+    localidad: [''],
+    kind: ['', Validators.required],
+    descripcion: ['', [Validators.required, Validators.minLength(10)]],
+    consent: [false, Validators.requiredTrue],
+  });
 
   get anonymous(): boolean {
-    return Boolean(this.form.controls.anonymous.value);
+    return this.isAnonymousChecked();
   }
 
   get previewEmail(): string {
@@ -54,15 +52,15 @@ export class FormularioDenunciasComponent {
   }
 
   get submitBlocked(): boolean {
-    return this.submitted && (this.form.invalid || !this.files.length);
+    return this.submitted && !this.canSubmit();
   }
 
   openConfirm(): void {
     this.submitted = true;
+    this.syncAnonymousFromDom();
     this.form.markAllAsTouched();
-    this.fileError = this.files.length ? '' : 'Adjuntá al menos un archivo que ayude a comprobar lo que contás.';
 
-    if (this.form.invalid || !this.files.length) {
+    if (!this.canSubmit()) {
       this.scrollToError();
       return;
     }
@@ -138,7 +136,40 @@ export class FormularioDenunciasComponent {
   }
 
   identityError(): boolean {
-    return Boolean(this.form.errors?.['identity'] && (this.form.touched || this.submitted));
+    return this.submitted && this.identityMissing();
+  }
+
+  private canSubmit(): boolean {
+    return !this.form.invalid && !this.identityMissing();
+  }
+
+  private identityMissing(): boolean {
+    if (this.isAnonymousChecked()) {
+      return false;
+    }
+    const nombre = String(this.form.controls.nombre.value ?? '').trim();
+    const apellido = String(this.form.controls.apellido.value ?? '').trim();
+    return !nombre || !apellido;
+  }
+
+  private isAnonymousChecked(): boolean {
+    const checkbox = this.anonymousCheckbox();
+    if (checkbox) {
+      return checkbox.checked;
+    }
+    return Boolean(this.form.controls.anonymous.value);
+  }
+
+  private syncAnonymousFromDom(): void {
+    const checkbox = this.anonymousCheckbox();
+    if (checkbox) {
+      this.form.controls.anonymous.setValue(checkbox.checked, { emitEvent: false });
+    }
+  }
+
+  private anonymousCheckbox(): HTMLInputElement | null {
+    const el = this.host.nativeElement.querySelector('#anonymous');
+    return el instanceof HTMLInputElement ? el : null;
   }
 
   private dialog(): HTMLDialogElement | undefined {
@@ -150,20 +181,39 @@ export class FormularioDenunciasComponent {
     return el ?? undefined;
   }
 
-  private scrollToError(): void {
-    queueMicrotask(() => {
-      const host = document.querySelector('app-formulario-denuncias');
-      const target = host?.querySelector('.has-error, .field-error');
-      target?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    });
-  }
-}
+  private firstInvalidControlName(): string | null {
+    if (this.identityMissing()) {
+      const nombre = String(this.form.controls.nombre.value ?? '').trim();
+      return nombre ? 'apellido' : 'nombre';
+    }
 
-function identityValidator(group: AbstractControl): { identity: true } | null {
-  if (group.get('anonymous')?.value) {
+    const order = ['email', 'kind', 'descripcion', 'consent'] as const;
+    for (const name of order) {
+      if (this.form.controls[name].invalid) {
+        return name;
+      }
+    }
+
     return null;
   }
-  const nombre = String(group.get('nombre')?.value ?? '').trim();
-  const apellido = String(group.get('apellido')?.value ?? '').trim();
-  return nombre && apellido ? null : { identity: true };
+
+  private scrollToError(): void {
+    const name = this.firstInvalidControlName();
+    setTimeout(() => {
+      const root = this.host.nativeElement;
+      const field = name ? root.querySelector(`#${name}`) : null;
+      const target = field ?? root.querySelector('.has-error');
+      if (!(target instanceof HTMLElement)) {
+        return;
+      }
+
+      target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      const focusable = target.matches('input, select, textarea')
+        ? target
+        : target.querySelector('input, select, textarea');
+      if (focusable instanceof HTMLElement) {
+        focusable.focus({ preventScroll: true });
+      }
+    }, 0);
+  }
 }
