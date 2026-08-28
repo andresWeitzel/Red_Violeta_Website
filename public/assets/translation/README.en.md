@@ -1,43 +1,50 @@
 <div align="center">
-  <img src="../../assets/proteger.png" alt="Red Violeta" width="96" />
+
+![Red Violeta](../repository/01-cover-inicio.png)
+
 </div>
 
 <div align="right">
-  <img src="https://img.shields.io/badge/Angular-22.1-DD0031?logo=angular&logoColor=white" alt="Angular 22" />
-  &nbsp;
-  <img src="https://img.shields.io/badge/TypeScript-5.x-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
-  &nbsp;
-  <img src="https://img.shields.io/badge/Bootstrap-4.5-7952B3?logo=bootstrap&logoColor=white" alt="Bootstrap 4.5" />
-  &nbsp;
-  <img src="https://img.shields.io/badge/Node.js-22+-339933?logo=nodedotjs&logoColor=white" alt="Node.js 22+" />
-  &nbsp;
-  <img src="https://img.shields.io/badge/Netlify-deploy-00C7B7?logo=netlify&logoColor=white" alt="Netlify" />
+  <img width="25" height="25" src="../icons/frontend/png/angular.png" alt="Angular" />
+  <img width="25" height="25" src="../icons/backend/javascript-typescript/png/typescript.png" alt="TypeScript" />
+  <img width="25" height="25" src="../icons/frontend/png/bootstrap.png" alt="Bootstrap" />
+  <img width="25" height="25" src="../icons/backend/javascript-typescript/png/nodejs.png" alt="Node.js" />
+  <img width="25" height="25" src="../icons/frontend/png/jquery.png" alt="jQuery" />
+  <img width="25" height="25" src="../icons/devops/png/npm.png" alt="npm" />
+  <img width="25" height="25" src="../icons/devops/png/git.png" alt="Git" />
+  <img width="25" height="25" src="../icons/devops/png/github.png" alt="GitHub" />
 </div>
+
+<br>
 
 <br>
 
 <div align="right">
   <a href="../../../README.md">
-    <img src="https://flagcdn.com/w40/ar.png" width="40" height="30" alt="Español" />
+    <img src="./arg-flag.png" width="65" height="40" alt="Español" />
   </a>
-  &nbsp;
   <a href="./README.en.md">
-    <img src="https://flagcdn.com/w40/us.png" width="40" height="30" alt="English" />
+    <img src="./eeuu-flag.png" width="65" height="40" alt="English" />
   </a>
 </div>
+
+<br>
 
 <div align="center">
 
-# Red Violeta ![status](https://img.shields.io/badge/status-UI_migration-b45c7e)
+# Red Violeta ![(status-completed)](../icons/badges/status-completed.svg)
 
 </div>
 
-Web app for **support, helplines, news and official resources** on gender-based violence, discrimination and human trafficking. **Angular 22** frontend, no backend of its own. The complaint form is a **demo**: it does **not** email official 144 / 137 / 145 inboxes.
+**Red Violeta** is a containment network for anyone facing **gender-based violence, discrimination or human trafficking** in Argentina. It brings together what is usually scattered: **24/7 helplines**, an **agency map**, **news** and **official sites** for Nación, CABA and Provincia de Buenos Aires.
 
-* [**App (production):**](https://web-app-denuncias.netlify.app/)
-* [**App (local):**](http://localhost:4200/)
-* [**Repository:**](https://github.com/andresWeitzel/Red_Violeta_Website)
-* [**Full README (Spanish):**](../../../README.md)
+Home puts help first: 144, 137 and 145 (call, WhatsApp or email), the *How to get help* guide (911 if there is immediate danger, orientation or leaving a record) and a map to reach an agency. There is also a news catalog, a form to register the situation, and access to State procedures and assistance. Built for desktop and phone, with a safety note for shared devices.
+
+**Angular 22** frontend.
+
+* [**App (production)**](https://red-violeta.vercel.app/inicio)
+* [**App (local)**](http://localhost:4200/)
+* [**Full README (Spanish)**](../../../README.md)
 
 <br>
 
@@ -59,6 +66,7 @@ Web app for **support, helplines, news and official resources** on gender-based 
 * [1.0) Description.](#10-description-)
 * [1.1) Run the project.](#11-run-the-project-)
 * [1.2) Technologies.](#12-technologies-)
+* [1.3) Screenshots.](#13-screenshots-)
 
 ### Section 2) Pages and routes
 
@@ -81,11 +89,19 @@ Web app for **support, helplines, news and official resources** on gender-based 
 <details>
   <summary>View details</summary>
 
-**Red Violeta** is a containment-first site (not “online complaint”). It surfaces 24/7 helplines, agencies, a map and a catalog of notes, reports, programmes and regulations.
+**Red Violeta** is built for the moment someone needs to **know what to do and whom to call**. It does not replace helplines or agencies: it brings them closer, in plain language, on desktop and on a phone.
 
-**Migration (`feature-02-update-interfaces`):** Angular 22 standalone, rebrand from *Denuncia Online*, mobile-first layout (nav drawer, compact form, footer columns, news search + selects), scroll-to-top on navigation.
+**What is in the site**
 
-The form never dispatches mail to official inboxes (spam / nuisance risk).
+* **24/7 helplines:** 144 (gender-based violence), 137 (family and sexual violence) and 145 (trafficking). Phone, WhatsApp and email, plus 911 if there is immediate danger.
+* **How to get help:** three paths — safety, orientation or leaving a record.
+* **Where to get help map:** agencies (La Plata, INADI, OVD and more) with call, directions and official site.
+* **Official sites:** Nación, CABA and Provincia de Buenos Aires — rights, reports and State assistance, with “See more sites”.
+* **News:** featured carousel and a library with search and type/year filters (notes, reports, programmes, regulations).
+* **Register a report:** a form to leave a record and continue to the **helplines**.
+* **Safer use:** a notice to prefer a call and clear history if the computer or phone is shared.
+
+An **Angular 22** frontend, ready to consult: help first, paperwork after.
 
 </details>
 
@@ -123,10 +139,49 @@ App: [http://localhost:4200/](http://localhost:4200/) (`/` → `/inicio`).
 | [Angular](https://angular.dev/) | 22.1.x | SPA |
 | TypeScript | ~6.0 | Typing |
 | Bootstrap | 4.5.3 (CDN) | Carousel / grid |
-| Netlify | — | Static hosting |
+| [Vercel](https://vercel.com/) | — | Static hosting |
 | Vitest | 4.x | Unit tests |
 
 Component CSS budget in production: **8 kB** (`anyComponentStyle`). Shared UI lives in `src/styles.css`.
+
+</details>
+
+### 1.3) Screenshots [🔝](#index-)
+
+<details>
+  <summary>View details</summary>
+
+<br>
+
+Desktop captures in `public/assets/repository/`. **`01-cover-inicio.png`** is also the banner at the top of this README.
+
+| File | What it shows |
+|------|----------------|
+| `01-cover-inicio.png` | **Home (hero).** Two women, *No más violencia. Contención y asistencia*, helplines 144 / 137 and *Ver líneas de ayuda*. |
+| `02-inicio-mapa.png` | **Home — map.** *Dónde pedir ayuda*: agency tabs (La Plata, INADI, OVD, etc.) and card with call / directions / site. |
+| `03-ayuda-guia.png` | **Home — guide.** *Cómo pedir ayuda* modal: immediate danger (911), orientation (144 / 137 / 145), leave a record. |
+| `04-novedades.png` | **News.** Search, Type / Year filters and featured carousel. |
+| `05-inicio-sitios.png` | **Home — official sites and footer.** Nación / CABA / PBA grid, safety notice and footer (brand, lines, site). |
+
+<p align="center"><img src="../repository/01-cover-inicio.png" alt="Home: support hero" width="100%" /></p>
+
+<p align="center"><em>01 — Home cover</em></p>
+
+<p align="center"><img src="../repository/02-inicio-mapa.png" alt="Home: Where to get help map" width="100%" /></p>
+
+<p align="center"><em>02 — Agency map</em></p>
+
+<p align="center"><img src="../repository/03-ayuda-guia.png" alt="Home: How to get help guide" width="100%" /></p>
+
+<p align="center"><em>03 — How to get help</em></p>
+
+<p align="center"><img src="../repository/04-novedades.png" alt="News: search, filters and carousel" width="100%" /></p>
+
+<p align="center"><em>04 — News</em></p>
+
+<p align="center"><img src="../repository/05-inicio-sitios.png" alt="Home: official sites and footer" width="100%" /></p>
+
+<p align="center"><em>05 — Official sites and footer</em></p>
 
 </details>
 
@@ -156,7 +211,7 @@ Component CSS budget in production: **8 kB** (`anyComponentStyle`). Shared UI li
   <summary>View details</summary>
 
 * Home official sites: 3 cards on mobile; **6** on desktop (≥992 px) so “See more” sits on the **second** row.
-* News filters: search + two `<select>`s (same logic as the old chips).
+* News filters: search + Type / Year selects.
 * Form: identity or anonymous, email, kind, account ≥30 chars, ≥1 file, consent. Valid submit → demo dialog → helplines page.
 
 </details>
@@ -174,7 +229,7 @@ Component CSS budget in production: **8 kB** (`anyComponentStyle`). Shared UI li
 npm run build
 ```
 
-Publish `dist/proyecto01/browser/`. Live: [web-app-denuncias.netlify.app](https://web-app-denuncias.netlify.app/).
+Publish `dist/proyecto01/browser/` on **Vercel**. Live: [red-violeta.vercel.app/inicio](https://red-violeta.vercel.app/inicio).
 
 </details>
 
@@ -184,6 +239,7 @@ Publish `dist/proyecto01/browser/`. Live: [web-app-denuncias.netlify.app](https:
   <summary>View details</summary>
 
 * [Spanish README](../../../README.md)
+* [App (production)](https://red-violeta.vercel.app/inicio)
 * [GitHub repo](https://github.com/andresWeitzel/Red_Violeta_Website)
 * Doc template: [ApiRest Electronic Devices ExpressJS](https://github.com/andresWeitzel/ApiRest_Electronic_Devices_ExpressJS)
 
