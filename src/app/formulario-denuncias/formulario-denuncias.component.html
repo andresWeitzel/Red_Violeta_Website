@@ -1,129 +1,176 @@
-<section class="container text-center mt-5">
+<div class="denuncia-page">
+  <section class="denuncia-hero" aria-labelledby="denuncia-title">
+    <header class="section-heading">
+      <p class="section-kicker">Registro</p>
+      <h1 id="denuncia-title">Registrar denuncia</h1>
+      <p class="section-lead">Completá los datos para dejar constancia. En una urgencia, llamá al 911, 144, 137 o 145.</p>
+    </header>
+  </section>
 
-    <br>
-    <br>
-    <div>
-        <h3>FORMULARIO DE DENUNCIAS</h3>
-    </div>
-    <hr>
+  <section class="denuncia-section">
+    <div class="denuncia-card">
+      <form [formGroup]="form" (ngSubmit)="openConfirm()" novalidate autocomplete="off">
+        <fieldset class="form-block">
+          <legend>Tus datos</legend>
+          <p class="block-help">Si no es seguro identificarte, podés no dar el nombre.</p>
 
+          <label class="check-row">
+            <input type="checkbox" formControlName="anonymous" />
+            <span>Prefiero no dar mi nombre</span>
+          </label>
 
-
-    <!--La lógica de js esta en .ts-->
-    <form class="needs-validation" novalidate (submit)="onSubmit($event)">
-
-        <div class="text-left p-2 m-2">
-
-            <div class="form-group">
-
-                <label for="nombre"> <h5>Nombre:</h5></label>
-
-                <input type="text" class="form-control" id="nombre" placeholder="Ingrese un Nombre" required>
-                <div class="valid-feedback">
-                    Nombre Ingresado!
-                </div>
-                <div class="invalid-feedback">
-                    Debes ingresar un Nombre!
-                </div>
-
+          @if (!anonymous) {
+            <div class="field-grid">
+              <div class="field" [class.has-error]="identityError()">
+                <label for="nombre">Nombre</label>
+                <input id="nombre" type="text" formControlName="nombre" autocomplete="given-name" />
+              </div>
+              <div class="field" [class.has-error]="identityError()">
+                <label for="apellido">Apellido</label>
+                <input id="apellido" type="text" formControlName="apellido" autocomplete="family-name" />
+              </div>
             </div>
-            <div class="form-group">
-                <label for="apellido"> <h5>Apellido:</h5></label>
+            @if (identityError()) {
+              <p class="field-error">Completá nombre y apellido, o marcá que preferís no darlos.</p>
+            }
+          }
 
-                <input class="form-control" type="text" id="apellido" placeholder="Ingrese un apellido" required>
-                <div class="valid-feedback">
-                    Apellido Ingresado!
-                </div>
-                <div class="invalid-feedback">
-                    Debes ingresar un Apellido!
-                </div>
-
+          <div class="field-grid">
+            <div class="field">
+              <label for="edad">Edad <em>opcional</em></label>
+              <input id="edad" type="number" formControlName="edad" min="1" max="120" inputmode="numeric" />
             </div>
-            <div class="form-group">
-                <label for="edad"><h5>Edad:</h5></label>
-
-                <input class="form-control" type="number" id="edad" placeholder="Ingrese su edad" required>
-                <div class="valid-feedback">
-                    Edad Ingresado!
-                </div>
-                <div class="invalid-feedback">
-                    Debes ingresar una Edad!
-                </div>
-
+            <div class="field">
+              <label for="localidad">Localidad <em>opcional</em></label>
+              <input id="localidad" type="text" formControlName="localidad" autocomplete="address-level2" />
             </div>
-            <div class="form-group">
-                <label for="email"><h5>Correo Electrónico</h5></label>
+          </div>
 
-                <input type="email" class="form-control" id="email" placeholder="ingrese algun correo electronico (ej: ejemplo@gmail.com)" required>
-                <div class="valid-feedback">
-                    Correo Electrónico Ingresado!
-                </div>
-                <div class="invalid-feedback">
-                    Debes ingresar un Correo Electrónico!
-                </div>
-
+          <div class="field-grid">
+            <div class="field" [class.has-error]="hasError('email')">
+              <label for="email">Correo</label>
+              <input id="email" type="email" formControlName="email" autocomplete="email" placeholder="tu@correo.com" />
             </div>
-
-            <div class="form-group">
-                <label for="tipo_denuncia"><h5>Tipo de Denuncia</h5></label>
-
-                <select class="form-control" id="denuncia" required>
-                    <option selected disabled value="">Elija una opción</option>
-                    <option>Violencia de Género</option>
-                    <option>Violencia Familiar y Sexual</option>
-                    <option>Trata de Personas</option>
-                    <option>Otros</option>
-                 </select>
-                <div class="valid-feedback">
-                    Tipo de Denuncia Ingresada!
-                </div>
-                <div class="invalid-feedback">
-                    Debes ingresar un Tipo de Denuncia!
-                </div>
+            <div class="field">
+              <label for="telefono">Teléfono <em>opcional</em></label>
+              <input id="telefono" type="tel" formControlName="telefono" autocomplete="tel" placeholder="11 1234 5678" />
             </div>
+          </div>
+          @if (hasError('email')) {
+            <p class="field-error">Poné un correo válido.</p>
+          }
+        </fieldset>
 
-            <div class="form-group">
-                <label for="comentarios"><h5>Descripción de la Denuncia</h5></label>
+        <fieldset class="form-block">
+          <legend>Qué querés denunciar</legend>
+          <div class="field" [class.has-error]="hasError('kind')">
+            <label for="kind">Tipo</label>
+            <select id="kind" formControlName="kind">
+              <option value="" disabled>Elegí una opción</option>
+              @for (kind of kinds; track kind.id) {
+                <option [value]="kind.id">{{ kind.label }}</option>
+              }
+            </select>
+            @if (hasError('kind')) {
+              <p class="field-error">Elegí el tipo de denuncia.</p>
+            }
+          </div>
+          <div class="field" [class.has-error]="hasError('descripcion')">
+            <label for="descripcion">Relato</label>
+            <textarea
+              id="descripcion"
+              formControlName="descripcion"
+              rows="4"
+              placeholder="Contá qué pasó, cuándo, dónde y si hay riesgo ahora. Cuanto más preciso, mejor el seguimiento."
+            ></textarea>
+            @if (hasError('descripcion')) {
+              <p class="field-error">Escribí al menos 30 caracteres para que se pueda entender la situación.</p>
+            }
+          </div>
+        </fieldset>
 
-                <textarea class="form-control" id="descripcion" rows="3" required></textarea>
-                <div class="valid-feedback">
-                    Descripción de Denuncia Ingresada!
-                </div>
-                <div class="invalid-feedback">
-                    Es importante que des una descripción de la denuncia !
-                </div>
+        <fieldset class="form-block">
+          <legend>Archivos para comprobar</legend>
+          <p class="block-help">Fotos, capturas, PDFs o audios. Hasta {{ maxFiles }} archivos, {{ maxFileMb }} MB cada uno.</p>
+          <label class="file-drop" [class.has-error]="submitted && !files.length">
+            <input type="file" [accept]="accept" multiple (change)="onFiles($event)" />
+            <strong>Elegí archivos</strong>
+            <span>PDF, imagen, Word o audio/video corto</span>
+          </label>
+          @if (fileError) {
+            <p class="field-error">{{ fileError }}</p>
+          }
+          @if (submitted && !files.length && !fileError) {
+            <p class="field-error">Adjuntá al menos un archivo.</p>
+          }
+          @if (files.length) {
+            <ul class="file-list">
+              @for (file of files; track file.name + file.size; let i = $index) {
+                <li>
+                  <span>{{ file.name }}</span>
+                  <button type="button" (click)="removeFile(i)">Quitar</button>
+                </li>
+              }
+            </ul>
+          }
+        </fieldset>
 
-            </div>
+        <label class="check-row" [class.has-error]="hasError('consent')">
+          <input type="checkbox" formControlName="consent" />
+          <span>Entiendo que esto no reemplaza una denuncia policial o judicial.</span>
+        </label>
+        @if (hasError('consent')) {
+          <p class="field-error">Tenés que aceptar para continuar.</p>
+        }
 
-            <hr>
-            <div class="form-group">
-                <label for="archivo_usuario"><h5>Archivo para Comprobar</h5> </label>
+        @if (submitBlocked) {
+          <p class="field-error submit-error">
+            Revisá los campos marcados más arriba. Cuando estén completos, se abre la confirmación.
+          </p>
+        }
 
-                <input type="file" class="form-control-file text-danger m-3 p-2" id="archivo_usuario" required>
-                <div class="valid-feedback">
-                    Archivo Ingresado!
-                </div>
-                <div class="invalid-feedback">
-                    Es importante que Ingreses un archivo para comprobación!
-                </div>
-
-            </div>
-            <hr>
-            <br>
-
-
-            <div class="m-2 p-2 text-center">
-                <button type="reset" class="btn btn-danger mb-2">BORRAR</button>
-                <button type="submit" class="btn btn-success ml-3 mb-2">ENVIAR</button>
-            </div>
-
-            <br>
-            <br>
-            <hr>
-
+        <div class="form-actions">
+          <button type="button" class="btn-ghost" (click)="resetForm()">Borrar</button>
+          <button type="submit" class="btn-primary">Enviar</button>
         </div>
+      </form>
+    </div>
+  </section>
 
+  <aside class="privacy-note">
+    <div class="privacy-wrap">
+      <strong>Si no estás en un lugar seguro</strong>
+      <p>
+        Preferí una llamada al 911, 144, 137 o 145. En un dispositivo compartido, borrá el historial cuando termines.
+      </p>
+    </div>
+  </aside>
+</div>
 
-    </form>
-
-</section>
+<dialog
+  #confirmDialog
+  class="confirm-dialog"
+  aria-labelledby="confirm-title"
+  (click)="onDialogClick($event)"
+>
+  <div class="confirm-panel">
+    <header>
+      <p>Confirmación</p>
+      <h2 id="confirm-title">¿Confirmás el registro?</h2>
+    </header>
+    <p class="confirm-lead">
+      Esta es una versión de demostración. En un entorno operativo, el aviso se enviaría a
+      <strong>{{ previewEmail }}</strong>.
+    </p>
+    <div class="demo-note">
+      <p class="section-kicker">Demostración</p>
+      <p>
+        En esta instancia el despacho de correo no está habilitado. El mensaje no se envía: no hay integración de envío activa.
+      </p>
+    </div>
+    <footer>
+      <button type="button" class="btn-ghost" (click)="finishFlow()">No</button>
+      <button type="button" class="btn-primary" (click)="finishFlow()">Sí</button>
+    </footer>
+  </div>
+</dialog>

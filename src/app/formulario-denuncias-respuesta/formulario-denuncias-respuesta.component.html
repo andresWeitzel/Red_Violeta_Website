@@ -1,1 +1,35 @@
-<h1>Formulario Procesado</h1>
+<div class="lineas-page">
+  <section class="lineas-hero" aria-labelledby="lineas-title">
+    <header class="section-heading">
+      <p class="section-kicker">Atención</p>
+      <h1 id="lineas-title">Líneas de atención</h1>
+      <p class="section-lead">
+        Canales oficiales para asistencia. En una urgencia, llamá al 911.
+      </p>
+    </header>
+  </section>
+
+  <section class="lineas-section">
+    <div class="lineas-card">
+      <p class="section-kicker">Líneas de atención</p>
+      <ul class="forward-list">
+        @for (contact of contacts; track contact.id) {
+          <li>
+            <strong>{{ contact.name }}</strong>
+            <span>{{ contact.area }}</span>
+            <a class="lineas-phone" [href]="'tel:' + contact.phone">{{ contact.phone }}</a>
+            <a [href]="'mailto:' + contact.email">{{ contact.email }}</a>
+          </li>
+        }
+      </ul>
+    </div>
+  </section>
+
+  <aside class="lineas-note">
+    <div class="note-wrap">
+      <strong>Si no estás en un lugar seguro</strong>
+      <p>Preferí una llamada. En un dispositivo compartido, borrá el historial cuando termines.</p>
+    </div>
+    <a class="btn-primary" routerLink="/inicio">Volver al inicio</a>
+  </aside>
+</div>

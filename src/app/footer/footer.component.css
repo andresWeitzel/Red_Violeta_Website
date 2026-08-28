@@ -1,5 +1,177 @@
-footer {
-    position: relative;
-    bottom: 0;
-    width: 100%;
+:host {
+  display: block;
+  font-family: Manrope, "Segoe UI", sans-serif;
+}
+
+.site-foot {
+  margin-top: 0.5rem;
+  color: #f8eef3;
+  background: linear-gradient(180deg, #6a3b50 0%, #5e3548 100%);
+}
+
+.site-foot-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 0.85fr);
+  gap: 1.4rem 2.2rem;
+  align-items: start;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 1.65rem;
+}
+
+.foot-logo {
+  display: inline-flex;
+  gap: 0.4rem;
+  align-items: center;
+  margin: 0 0 0.55rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.foot-logo img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.foot-logo strong {
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.foot-brand p {
+  margin: 0;
+  max-width: 16.5rem;
+  color: rgba(248, 238, 243, 0.84);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.site-foot h2 {
+  margin: 0 0 0.55rem;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #d08aa6;
+}
+
+.site-foot ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-foot a {
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.site-foot a:hover,
+.site-foot a:focus {
+  color: #f3c6d7;
+  text-decoration: underline;
+}
+
+.foot-lines {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  grid-template-rows: auto auto;
+  grid-auto-flow: column;
+  justify-content: start;
+  gap: 0.45rem 0.4rem;
+}
+
+.foot-lines a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  min-height: 36px;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  font-variant-numeric: tabular-nums;
+  text-decoration: none;
+}
+
+.foot-lines a:hover,
+.foot-lines a:focus {
+  background: rgba(255, 255, 255, 0.12);
+  text-decoration: none;
+}
+
+.foot-lines svg {
+  width: 0.85rem;
+  height: 0.85rem;
+  flex-shrink: 0;
+}
+
+.foot-pages a {
+  display: block;
+  padding: 0.2rem 0;
+}
+
+.site-foot-bar {
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(20, 8, 14, 0.28);
+  padding: 1rem 1.25rem 1.15rem;
+  text-align: center;
+}
+
+.site-foot-bar p {
+  margin: 0 auto;
+  max-width: 40rem;
+  color: #f8eef3;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.site-foot-bar a {
+  color: #f7c9d8;
+  font-weight: 800;
+}
+
+@media (max-width: 767.98px) {
+  .site-foot-inner {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.9fr);
+    gap: 1.05rem 1rem;
+    padding: 1.15rem 1rem 1.25rem;
+  }
+
+  .foot-brand {
+    grid-column: 1 / -1;
+  }
+
+  .foot-brand p {
+    max-width: none;
+  }
+
+  .foot-lines {
+    gap: 0.35rem 0.32rem;
+  }
+
+  .foot-lines a {
+    min-height: 34px;
+    padding: 0.2rem 0.35rem;
+    font-size: 0.84rem;
+  }
+
+  .foot-pages a {
+    padding: 0.16rem 0;
+    font-size: 0.88rem;
+  }
+
+  .site-foot-bar {
+    padding: 0.9rem 1rem 1.05rem;
+  }
+
+  .site-foot-bar p {
+    font-size: 0.86rem;
+  }
 }

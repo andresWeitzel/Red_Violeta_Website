@@ -1,79 +1,168 @@
-<section class="container text-center">
+<div class="novedades-page">
+  <section class="news-hero" aria-labelledby="news-title">
+    <header class="section-heading">
+      <p class="section-kicker">Actualidad</p>
+      <h1 id="news-title">Novedades y recursos</h1>
+      <p class="section-lead">
+        Notas, programas, informes y normativa oficial. Buscá o filtrá por tipo y año.
+      </p>
+      <p class="news-updated">Actualizado en {{ catalogUpdated }}</p>
+    </header>
+  </section>
 
-    <br><br>
-    <!--CARD PLAN DISCRIMINACION-->
-    <a href="https://www.argentina.gob.ar/noticias/plan-nacional-contra-la-discriminacion-siguen-los-encuentros-federales" target="blank">
-        <div class="card bg-success text-white mt-5">
-            <img src="../assets/violencia4.jpg" class="card-img" alt="...">
-            <div class="card-img-overlay">
-                <div class="bg-sucess">
-                    <h4 class="card-title">PLAN NACIONAL CONTRA LA DISCRIMINACIÓN</h4>
-                    <h6 class="card-text  d-none d-sm-none  d-md-block">Esta semana comenzó un nuevo ciclo de los Foros, con 70 organizaciones de la región Cuyo y Patagonia..</h6>
-                    <span class="badge badge-success">Ministerio de Justicia y Derechos Humanos</span>
-                </div>
-            </div>
+  <section class="stories-section" aria-labelledby="stories-title">
+    <div class="news-wrap">
+      <div class="carousel-bar">
+        <header class="block-heading">
+          <p>Destacadas</p>
+          <h2 id="stories-title">Recorré las novedades</h2>
+        </header>
+        <div class="carousel-nav">
+          <button type="button" class="carousel-btn" (click)="scrollCarousel(-1)" aria-label="Ver anteriores">
+            ‹
+          </button>
+          <button type="button" class="carousel-btn" (click)="scrollCarousel(1)" aria-label="Ver siguientes">
+            ›
+          </button>
         </div>
-    </a>
+      </div>
 
-    <!--FIN CARD PLAN DISCRIMINACION-->
-    <!--CARD IGUALDAD DE GENERO-->
-    <a href="http://www.cifi.com/2019/04/05/compromiso-con-la-igualdad-de-genero/" target="blank">
-        <div class="card bg-success text-white mt-5">
-            <img src="../assets/igualdad.jpg" class="card-img" alt="...">
-            <div class="card-img-overlay text-center">
-                <div class="bg-sucess text-white">
-                    <h4 class="card-title">COMPROMISO CON LA IGUALDAD DE GÉNERO</h4>
-                    <h6 class="card-text d-none d-sm-none  d-md-block">En el mes de la mujer, CIFI reforzó su compromiso con la equidad de género al adoptar oficialmente su Política de Igualdad de Género</h6>
-                    <span class="badge badge-success">CIFI</span>
-                </div>
-
-            </div>
+      <div class="news-toolbar">
+        <label class="news-search">
+          <span class="news-field-label">Buscar</span>
+          <span class="news-search-field">
+            <span class="news-search-icon" aria-hidden="true">
+              <svg viewBox="0 0 16 16" width="16" height="16">
+                <path fill="currentColor" d="M11.5 10.4a5.6 5.6 0 10-1.1 1.1l3.05 3.05a.8.8 0 001.13-1.13L11.5 10.4zM6.8 10.4a3.6 3.6 0 110-7.2 3.6 3.6 0 010 7.2z"/>
+              </svg>
+            </span>
+            <input
+              type="search"
+              [value]="searchQuery"
+              (input)="setSearch($event)"
+              placeholder="Título, organismo o tema"
+              autocomplete="off"
+              enterkeyhint="search"
+              aria-label="Buscar novedades"
+            />
+          </span>
+        </label>
+        <div class="news-toolbar-fields">
+          <label class="news-select">
+            <span class="news-field-label">Tipo</span>
+            <select [value]="selectedKind" (change)="setKindFromSelect($event)" aria-label="Filtrar por tipo">
+              @for (kind of kinds; track kind.id) {
+                <option [value]="kind.id">{{ kind.label }}</option>
+              }
+            </select>
+          </label>
+          <label class="news-select">
+            <span class="news-field-label">Año</span>
+            <select [value]="yearValue" (change)="setYearFromSelect($event)" aria-label="Filtrar por año">
+              <option value="todos">Todos los años</option>
+              @for (year of recentYears; track year) {
+                <option [value]="year">{{ year }}</option>
+              }
+              @if (olderCount > 0) {
+                <option value="anteriores">Antes de 2020</option>
+              }
+            </select>
+          </label>
         </div>
+      </div>
 
-    </a>
+      <p class="news-count">{{ filteredNews.length }} resultado{{ filteredNews.length === 1 ? '' : 's' }}</p>
 
-    <!--FIN CARD IGUALDAD DE GENERO-->
-    <br><br>
-
-    <h2><span class="badge badge-success text-center">DOCUMENTACIÓN Y PROGRAMAS</span></h2>
-
-    <br>
-    <hr>
-    <!--MEDIA BODY IGUALDAD-->
-    <div class="media">
-
-        <img src="../assets/igualdad-de-genero.svg" width="100px" class="mr-3" alt="...">
-        <div class="media-body text-left">
-            <h5 class="mt-0  text-center">Comunidades sin Violencias</h5><br>El Programa “Comunidades sin Violencias” busca fortalecer los abordajes contra las violencias por razones de género en los 135 municipios, a la vez que apunta a trabajar sobre el diseño institucional de cada
-            espacio para la gestión y el desarrollo local de políticas de género.<br> Cuenta con tres líneas de trabajo: una fortalecer los equipos locales de cada municipio; en segundo lugar construir o remodelar infraestructura para ampliar la Red de
-            Hogares de Protección Integral que albergan a mujeres y familias en situación de violencia y las casas de medio camino; y por último desarrollar vías de acceso al trabajo para mujeres y LGTBI+.<br>
-            <div class="text-center mt-4">
-                <a href="http://ministeriodelasmujeres.gba.gob.ar/img/ext/comunidades.pdf" target="blank"><button class="btn btn-success text-center" ><span class="badge badge-success text-center">Ver Documento PDF </span></button></a>
-            </div>
+      @if (filteredNews.length === 0) {
+        <p class="news-empty">No hay novedades con esa búsqueda o esos filtros. Probá otra combinación.</p>
+      } @else {
+        <div class="stories-carousel" #newsCarousel tabindex="0" aria-label="Carrusel de novedades">
+          @for (item of featuredNews; track item.id) {
+            <a
+              class="story-card"
+              [href]="item.url"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div class="story-media">
+                <img [src]="item.image" [alt]="item.imageAlt" width="1400" height="851" />
+                <div class="story-scrim" aria-hidden="true"></div>
+                <span class="story-tag">{{ item.tag }}</span>
+              </div>
+              <div class="story-body">
+                <p class="story-source">{{ item.source }} · {{ item.year }}</p>
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.excerpt }}</p>
+                <span class="story-link">{{ item.linkLabel }}</span>
+              </div>
+            </a>
+          }
         </div>
+      }
     </div>
+  </section>
 
-    <!--FIN MEDIA BODY IGUALDAD-->
+  @if (libraryNews.length > 0) {
+    <section class="library-section" aria-labelledby="library-title">
+      <div class="news-wrap">
+        <header class="block-heading">
+          <p>Biblioteca</p>
+          <h2 id="library-title">Más documentación</h2>
+          <span class="block-lead">El mismo filtro, más abajo: informes, notas, PDF y sitios oficiales para consultar con calma.</span>
+        </header>
 
-    <hr>
-
-    <!--MEDIA BODY DISCRIMINACION-->
-    <div class="media mt-3">
-        <a class="mr-3" href="#">
-            <img src="../assets/racism.svg" width="100px" class="mr-3" alt="...">
-        </a>
-        <div class="media-body text-left">
-            <h5 class="mt-0 text-center">Memoria de Gestión INADI 2020</h5><br> En un año signado por la pandemia y la crisis económica, en el Instituto Nacional contra la Discriminación, la Xenofobia y el Racismo (INADI) trabajo desde el primer día para aportar a la contención social
-            de los sectores más vulnerables en este momento de fragilidad.<br>Invitamos al público en general a leer y revisar nuestra Memoria Anual completa disponible en esta misma página.<br>
-            <div class="text-center mt-4">
-                <a href="https://www.argentina.gob.ar/sites/default/files/memoria_anual_del_inadi_22-12-2020-convertido.pdf" target="blank"><button class="btn btn-success text-center" ><span class="badge badge-success text-center">Ver Documento PDF </span></button></a>
+        <div class="library-panel" [class.is-collapsed]="hasMoreLibrary">
+          <div class="library-grid">
+            @for (item of visibleLibraryNews; track item.id) {
+              <a
+                class="story-card story-card--library"
+                [href]="item.url"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div class="story-media">
+                  <img [src]="item.image" [alt]="item.imageAlt" width="1400" height="851" loading="lazy" decoding="async" />
+                  <div class="story-scrim" aria-hidden="true"></div>
+                  <span class="story-tag">{{ item.tag }}</span>
+                </div>
+                <div class="story-body">
+                  <p class="story-source">{{ item.source }} · {{ item.year }}</p>
+                  <h3>{{ item.title }}</h3>
+                  <p>{{ item.excerpt }}</p>
+                  <span class="story-link">{{ item.linkLabel }}</span>
+                </div>
+              </a>
+            }
+          </div>
+          @if (hasMoreLibrary) {
+            <div class="library-fade">
+              <button type="button" class="library-more-btn" (click)="showMoreLibrary()">
+                Ver más novedades
+              </button>
             </div>
+          }
         </div>
+      </div>
+    </section>
+  }
+
+  <section class="news-cta-section">
+    <div class="news-cta">
+      <div>
+        <h2>¿Querés dejar registro de una denuncia?</h2>
+        <p>Completá el formulario y adjuntá la mayor documentación posible para agilizar el seguimiento.</p>
+      </div>
+      <a class="news-cta-btn" routerLink="/formulario-denuncias">Registrar denuncia</a>
     </div>
-    <!--FIN MEDIA BODY DISCRIMINACION-->
-    <hr>
+  </section>
 
-    <br><br>
-
-
-</section>
+  <aside class="privacy-note">
+    <div class="privacy-wrap">
+      <strong>Si no estás en un lugar seguro</strong>
+      <p>
+        Preferí una llamada. Si usás esta página en una computadora o celular compartido, borrá el historial cuando
+        termines.
+      </p>
+    </div>
+  </aside>
+</div>
