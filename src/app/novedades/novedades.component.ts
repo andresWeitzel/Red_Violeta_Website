@@ -39,6 +39,8 @@ export class NovedadesComponent {
   selectedKind: 'todas' | NewsKind = 'todas';
   selectedYear: number | 'todos' | 'anteriores' = 'todos';
   readonly recentYears = [2026, 2025, 2024, 2023, 2022, 2021, 2020];
+  private readonly libraryStep = 4;
+  libraryVisibleCount = this.libraryStep;
 
   private readonly carousel = viewChild<ElementRef<HTMLElement>>('newsCarousel');
 
@@ -1791,13 +1793,30 @@ export class NovedadesComponent {
     return this.filteredNews.filter((item) => !featuredIds.has(item.id));
   }
 
+  get visibleLibraryNews(): NewsItem[] {
+    return this.libraryNews.slice(0, this.libraryVisibleCount);
+  }
+
+  get hasMoreLibrary(): boolean {
+    return this.libraryVisibleCount < this.libraryNews.length;
+  }
+
+  showMoreLibrary(): void {
+    this.libraryVisibleCount = Math.min(
+      this.libraryVisibleCount + this.libraryStep,
+      this.libraryNews.length,
+    );
+  }
+
   setKind(kind: 'todas' | NewsKind): void {
     this.selectedKind = kind;
+    this.libraryVisibleCount = this.libraryStep;
     this.resetCarousel();
   }
 
   setYear(year: number | 'todos' | 'anteriores'): void {
     this.selectedYear = year;
+    this.libraryVisibleCount = this.libraryStep;
     this.resetCarousel();
   }
 

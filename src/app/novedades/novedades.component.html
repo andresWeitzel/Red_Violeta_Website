@@ -111,26 +111,35 @@
           <span class="block-lead">El mismo filtro, más abajo: informes, notas, PDF y sitios oficiales para consultar con calma.</span>
         </header>
 
-        <div class="library-grid">
-          @for (item of libraryNews; track item.id) {
-            <a
-              class="story-card story-card--library"
-              [href]="item.url"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div class="story-media">
-                <img [src]="item.image" [alt]="item.imageAlt" width="1400" height="851" loading="lazy" decoding="async" />
-                <div class="story-scrim" aria-hidden="true"></div>
-                <span class="story-tag">{{ item.tag }}</span>
-              </div>
-              <div class="story-body">
-                <p class="story-source">{{ item.source }} · {{ item.year }}</p>
-                <h3>{{ item.title }}</h3>
-                <p>{{ item.excerpt }}</p>
-                <span class="story-link">{{ item.linkLabel }}</span>
-              </div>
-            </a>
+        <div class="library-panel" [class.is-collapsed]="hasMoreLibrary">
+          <div class="library-grid">
+            @for (item of visibleLibraryNews; track item.id) {
+              <a
+                class="story-card story-card--library"
+                [href]="item.url"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div class="story-media">
+                  <img [src]="item.image" [alt]="item.imageAlt" width="1400" height="851" loading="lazy" decoding="async" />
+                  <div class="story-scrim" aria-hidden="true"></div>
+                  <span class="story-tag">{{ item.tag }}</span>
+                </div>
+                <div class="story-body">
+                  <p class="story-source">{{ item.source }} · {{ item.year }}</p>
+                  <h3>{{ item.title }}</h3>
+                  <p>{{ item.excerpt }}</p>
+                  <span class="story-link">{{ item.linkLabel }}</span>
+                </div>
+              </a>
+            }
+          </div>
+          @if (hasMoreLibrary) {
+            <div class="library-fade">
+              <button type="button" class="library-more-btn" (click)="showMoreLibrary()">
+                Ver más novedades
+              </button>
+            </div>
           }
         </div>
       </div>

@@ -1,69 +1,77 @@
 <footer class="site-foot">
   <div class="site-foot-inner">
-    <div class="foot-brand">
-      <img src="assets/proteger.png" width="36" height="36" alt="" />
-      <div>
-        <strong>Denuncia Online</strong>
-        <p>Información, líneas de ayuda y registro de denuncias sobre violencia de género, discriminación y trata.</p>
-      </div>
+    <div class="foot-col foot-brand">
+      <p class="foot-kicker">Red de contención</p>
+      <a class="foot-logo" routerLink="/inicio">
+        <img src="assets/proteger.png" width="36" height="36" alt="" />
+        <strong>Red Violeta</strong>
+      </a>
+      <p>
+        Líneas de ayuda, información y recursos para pedir contención frente a violencias de género,
+        discriminación y trata.
+      </p>
     </div>
 
-    <div>
-      <h2>Líneas de ayuda</h2>
-      <ul>
+    <nav class="foot-col" aria-labelledby="foot-help-title">
+      <h2 id="foot-help-title">Líneas de ayuda</h2>
+      <ul class="foot-lines">
         <li>
           <a href="tel:911">
-            <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M3.65 1.33a.68.68 0 0 0-1.02-.06L1.6 2.3a1.75 1.75 0 0 0-.45 1.77 17.57 17.57 0 0 0 4.17 6.61 17.57 17.57 0 0 0 6.61 4.17c.6.21 1.28.03 1.77-.45l1.03-1.03a.68.68 0 0 0-.06-1.02L12.37 10.6a.68.68 0 0 0-.58-.12l-2.19.55a1.75 1.75 0 0 1-1.66-.46L5.48 8.06a1.75 1.75 0 0 1-.46-1.66l.55-2.19a.68.68 0 0 0-.12-.58L3.65 1.33z"/></svg>
-            911 emergencia
+            <strong>911</strong>
+            <span>Emergencia</span>
           </a>
         </li>
         <li>
           <a href="tel:144">
-            <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M3.65 1.33a.68.68 0 0 0-1.02-.06L1.6 2.3a1.75 1.75 0 0 0-.45 1.77 17.57 17.57 0 0 0 4.17 6.61 17.57 17.57 0 0 0 6.61 4.17c.6.21 1.28.03 1.77-.45l1.03-1.03a.68.68 0 0 0-.06-1.02L12.37 10.6a.68.68 0 0 0-.58-.12l-2.19.55a1.75 1.75 0 0 1-1.66-.46L5.48 8.06a1.75 1.75 0 0 1-.46-1.66l.55-2.19a.68.68 0 0 0-.12-.58L3.65 1.33z"/></svg>
-            144 violencia de género
+            <strong>144</strong>
+            <span>Violencia de género</span>
           </a>
         </li>
         <li>
           <a href="tel:137">
-            <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M3.65 1.33a.68.68 0 0 0-1.02-.06L1.6 2.3a1.75 1.75 0 0 0-.45 1.77 17.57 17.57 0 0 0 4.17 6.61 17.57 17.57 0 0 0 6.61 4.17c.6.21 1.28.03 1.77-.45l1.03-1.03a.68.68 0 0 0-.06-1.02L12.37 10.6a.68.68 0 0 0-.58-.12l-2.19.55a1.75 1.75 0 0 1-1.66-.46L5.48 8.06a1.75 1.75 0 0 1-.46-1.66l.55-2.19a.68.68 0 0 0-.12-.58L3.65 1.33z"/></svg>
-            137 violencia familiar
+            <strong>137</strong>
+            <span>Violencia familiar</span>
           </a>
         </li>
         <li>
           <a href="tel:145">
-            <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M3.65 1.33a.68.68 0 0 0-1.02-.06L1.6 2.3a1.75 1.75 0 0 0-.45 1.77 17.57 17.57 0 0 0 4.17 6.61 17.57 17.57 0 0 0 6.61 4.17c.6.21 1.28.03 1.77-.45l1.03-1.03a.68.68 0 0 0-.06-1.02L12.37 10.6a.68.68 0 0 0-.58-.12l-2.19.55a1.75 1.75 0 0 1-1.66-.46L5.48 8.06a1.75 1.75 0 0 1-.46-1.66l.55-2.19a.68.68 0 0 0-.12-.58L3.65 1.33z"/></svg>
-            145 trata de personas
+            <strong>145</strong>
+            <span>Trata de personas</span>
           </a>
         </li>
       </ul>
-    </div>
+    </nav>
 
-    <div>
-      <h2>Sitio</h2>
+    <nav class="foot-col" aria-labelledby="foot-site-title">
+      <h2 id="foot-site-title">Sitio</h2>
       <ul>
         <li><a routerLink="/inicio">Inicio</a></li>
+        <li><a routerLink="/inicio" fragment="lineas-de-ayuda">Líneas de ayuda</a></li>
         <li><a routerLink="/novedades">Novedades</a></li>
-        <li><a routerLink="/formulario-denuncias">Registrar denuncia</a></li>
+        <li><a routerLink="/formulario-denuncias">Dejar constancia</a></li>
       </ul>
-    </div>
+    </nav>
 
-    <div>
-      <h2>Recursos oficiales</h2>
+    <nav class="foot-col" aria-labelledby="foot-resources-title">
+      <h2 id="foot-resources-title">Recursos oficiales</h2>
       <ul>
         <li>
           <a href="https://www.argentina.gob.ar/linea-144" target="_blank" rel="noopener noreferrer">Línea 144 Nación</a>
         </li>
         <li>
-          <a href="https://buenosaires.gob.ar/seguridad/denuncias" target="_blank" rel="noopener noreferrer">Denuncias CABA</a>
+          <a href="https://www.argentina.gob.ar/servicio/violencia-familiar-y-sexual" target="_blank" rel="noopener noreferrer">Línea 137 Nación</a>
         </li>
         <li>
           <a href="https://www.ovd.gob.ar/ovd/" target="_blank" rel="noopener noreferrer">Oficina de Violencia Doméstica</a>
         </li>
+        <li>
+          <a href="https://www.gba.gob.ar/mujeres" target="_blank" rel="noopener noreferrer">Ministerio de las Mujeres (PBA)</a>
+        </li>
       </ul>
-    </div>
+    </nav>
   </div>
 
   <div class="site-foot-bar">
-    <p>Si hay peligro inmediato, llamá al <a href="tel:911">911</a>. Las líneas de ayuda son gratuitas, las 24 horas.</p>
+    <p>Si hay peligro inmediato, llamá al <a href="tel:911">911</a>. Las líneas son gratuitas, las 24 horas.</p>
   </div>
 </footer>

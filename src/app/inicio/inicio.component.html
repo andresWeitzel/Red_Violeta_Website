@@ -45,14 +45,23 @@
           Páginas de Nación, CABA y Provincia de Buenos Aires para ampliar información o iniciar un trámite.
         </span>
       </header>
-      <div class="resources-grid">
-        @for (resource of resources; track resource.url) {
-          <a class="resource-card" [href]="resource.url" target="_blank" rel="noopener noreferrer">
-            <span class="resource-tag">{{ resource.jurisdiction }}</span>
-            <h3>{{ resource.title }}</h3>
-            <p>{{ resource.description }}</p>
-            <span class="resource-link">Abrir sitio oficial</span>
-          </a>
+      <div class="resources-panel" [class.is-collapsed]="hasMoreResources">
+        <div class="resources-grid">
+          @for (resource of visibleResources; track resource.url) {
+            <a class="resource-card" [href]="resource.url" target="_blank" rel="noopener noreferrer">
+              <span class="resource-tag">{{ resource.jurisdiction }}</span>
+              <h3>{{ resource.title }}</h3>
+              <p>{{ resource.description }}</p>
+              <span class="resource-link">Abrir sitio oficial</span>
+            </a>
+          }
+        </div>
+        @if (hasMoreResources) {
+          <div class="resources-fade">
+            <button type="button" class="resources-more-btn" (click)="showMoreResources()">
+              Ver más sitios
+            </button>
+          </div>
         }
       </div>
     </div>

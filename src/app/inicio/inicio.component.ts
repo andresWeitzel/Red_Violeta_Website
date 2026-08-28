@@ -17,6 +17,9 @@ export interface OfficialResource {
   styleUrl: './inicio.component.css',
 })
 export class InicioComponent {
+  private readonly resourceStep = 3;
+  visibleCount = this.resourceStep;
+
   resources: OfficialResource[] = [
     {
       jurisdiction: 'Nación',
@@ -73,4 +76,16 @@ export class InicioComponent {
       url: 'https://www.ovd.gob.ar/ovd/',
     },
   ];
+
+  get visibleResources(): OfficialResource[] {
+    return this.resources.slice(0, this.visibleCount);
+  }
+
+  get hasMoreResources(): boolean {
+    return this.visibleCount < this.resources.length;
+  }
+
+  showMoreResources(): void {
+    this.visibleCount = Math.min(this.visibleCount + this.resourceStep, this.resources.length);
+  }
 }

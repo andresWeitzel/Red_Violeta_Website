@@ -299,6 +299,14 @@
   gap: 1.15rem;
 }
 
+.library-panel {
+  position: relative;
+}
+
+.library-panel.is-collapsed .library-grid {
+  padding-bottom: 0.35rem;
+}
+
 .story-card--library {
   min-height: 100%;
 }

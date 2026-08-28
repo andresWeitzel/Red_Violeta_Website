@@ -32,10 +32,12 @@ export class NavbarComponent {
     }
     this.menuOpen = true;
     this.scrollAtOpen = window.scrollY;
+    document.body.classList.add('nav-locked');
   }
 
   closeMenu(): void {
     this.menuOpen = false;
+    document.body.classList.remove('nav-locked');
   }
 
   openHelp(): void {

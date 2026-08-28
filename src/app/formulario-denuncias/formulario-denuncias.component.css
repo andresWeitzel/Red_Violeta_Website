@@ -355,15 +355,27 @@
 }
 
 @media (max-width: 575.98px) {
-  .field-grid,
-  .form-actions,
-  .confirm-panel footer {
-    grid-template-columns: 1fr;
-    display: grid;
-  }
-
-  .btn-primary,
-  .btn-ghost {
-    width: 100%;
-  }
+  :host { padding-top: 4.15rem; }
+  .denuncia-hero, .denuncia-section, .privacy-note { padding-left: 0.75rem; padding-right: 0.75rem; }
+  .denuncia-hero { padding-top: 0.75rem; }
+  .section-heading { margin-bottom: 0.55rem; }
+  .section-heading h1 { margin-bottom: 0.25rem; font-size: 1.38rem; }
+  .section-lead, .block-help { font-size: 0.84rem; line-height: 1.4; }
+  .denuncia-card { padding: 0.9rem 0.8rem 1rem; border-radius: 16px; }
+  .form-block { margin-bottom: 0.8rem; }
+  .form-block legend { margin-bottom: 0.25rem; font-size: 0.95rem; }
+  .block-help { margin-bottom: 0.45rem; }
+  .field-grid { gap: 0.5rem; }
+  .field { margin-bottom: 0.5rem; min-width: 0; }
+  .field label, .check-row span { margin-bottom: 0.18rem; font-size: 0.8rem; }
+  .field input, .field select, .field textarea { padding: 0.42rem 0.65rem; border-radius: 10px; }
+  .field textarea { min-height: 5.4rem; }
+  .check-row { gap: 0.45rem; margin-bottom: 0.6rem; padding: 0.48rem 0.6rem; }
+  .file-drop { margin-bottom: 0.45rem; padding: 0.65rem 0.7rem; }
+  .form-actions { flex-wrap: nowrap; margin-top: 0.7rem; }
+  .form-actions .btn-primary, .form-actions .btn-ghost { flex: 1; }
+  .privacy-note { padding-top: 0.65rem; padding-bottom: 1.35rem; }
+  .privacy-wrap { padding: 0.7rem 0.85rem; }
+  .confirm-panel footer { display: flex; flex-wrap: nowrap; }
+  .confirm-panel footer .btn-primary, .confirm-panel footer .btn-ghost { flex: 1; }
 }

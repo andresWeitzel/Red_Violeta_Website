@@ -115,10 +115,51 @@
   line-height: 1.5;
 }
 
+.resources-panel {
+  position: relative;
+}
+
 .resources-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.9rem;
+}
+
+.resources-panel.is-collapsed .resources-grid {
+  padding-bottom: 0.4rem;
+}
+
+.resources-fade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  padding: 3.6rem 0.8rem 0.15rem;
+  background: linear-gradient(180deg, rgba(247, 233, 238, 0), rgba(239, 213, 223, 0.72) 48%, rgba(239, 213, 223, 0.96) 100%);
+  pointer-events: none;
+}
+
+.resources-more-btn {
+  pointer-events: auto;
+  min-height: 44px;
+  padding: 0.5rem 1.25rem;
+  border: 1px solid rgba(180, 92, 126, 0.28);
+  border-radius: 999px;
+  background: rgba(255, 250, 252, 0.72);
+  color: var(--rv-primary-dark, #934866);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+}
+
+.resources-more-btn:hover,
+.resources-more-btn:focus {
+  background: rgba(255, 250, 252, 0.92);
+  border-color: var(--rv-primary, #b45c7e);
 }
 
 .resource-card {

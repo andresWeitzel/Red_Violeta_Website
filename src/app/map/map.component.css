@@ -157,7 +157,7 @@
   color: #241c22;
 }
 
-.place-body p {
+.place-about {
   margin: 0 0 0.85rem;
   color: #5e5560;
   font-size: 0.92rem;
@@ -194,9 +194,13 @@
 
 .place-actions {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.5rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.45rem;
   margin-top: auto;
+}
+
+.place-actions:has(.place-btn:nth-child(4)) {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .place-btn {
@@ -204,14 +208,16 @@
   align-items: center;
   justify-content: center;
   min-height: 42px;
-  padding: 0.4rem 0.6rem;
+  padding: 0.4rem 0.45rem;
   border: 1px solid #eadfe6;
   border-radius: 999px;
   background: #fff;
   color: #241c22;
-  font-size: 0.84rem;
+  font-size: 0.82rem;
   font-weight: 700;
+  text-align: center;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .place-btn--primary {
@@ -246,15 +252,19 @@
   }
 
   .place-list {
-    flex-direction: row;
-    gap: 0.45rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.4rem;
+  }
+
+  .place-list:has(.place-tab:nth-child(4)) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .place-tab {
-    flex: 1 1 0;
     min-width: 0;
     min-height: 44px;
-    padding: 0.55rem 0.45rem;
+    padding: 0.45rem 0.35rem;
     align-items: center;
     text-align: center;
   }
@@ -263,15 +273,23 @@
     display: none;
   }
 
+  .place-tab-compact,
+  .place-tab-city {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
   .place-tab-compact {
     display: block;
     margin: 0.1rem 0 0;
-    font-size: 0.82rem;
+    font-size: 0.8rem;
     line-height: 1.2;
   }
 
   .place-tab-city {
-    font-size: 0.64rem;
+    font-size: 0.62rem;
   }
 
   .place-tab-hours {
@@ -289,7 +307,54 @@
   }
 
   .place-body {
-    padding: 0.95rem 0.9rem 1rem;
+    padding: 0.85rem 0.85rem 1rem;
+  }
+
+  .place-badge,
+  .place-body h3,
+  .place-about,
+  .place-meta li {
+    overflow: hidden;
+  }
+
+  .place-badge {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .place-body h3 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    font-size: 0.98rem;
+  }
+
+  .place-about {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    margin-bottom: 0.7rem;
+  }
+
+  .place-meta li {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .place-meta a {
+    word-break: normal;
+  }
+
+  .place-actions {
+    gap: 0.4rem;
+  }
+
+  .place-btn {
+    min-height: 44px;
+    padding: 0.35rem 0.28rem;
+    font-size: 0.74rem;
   }
 }
 
@@ -300,12 +365,12 @@
   }
 
   .place-tab {
-    padding: 0.5rem 0.3rem;
+    padding: 0.42rem 0.28rem;
     border-radius: 12px;
   }
 
   .place-tab-compact {
-    font-size: 0.78rem;
+    font-size: 0.76rem;
   }
 
   .place-map {

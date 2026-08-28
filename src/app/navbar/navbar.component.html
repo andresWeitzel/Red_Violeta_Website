@@ -1,9 +1,9 @@
 <!--HEADER-->
 <header>
-    <nav class="navbar site-nav fixed-top" [class.is-menu-open]="menuOpen">
+    <nav class="navbar site-nav fixed-top">
         <div class="container nav-shell">
             <a class="navbar-brand" routerLink="/inicio" (click)="closeMenu()">
-                <img src="assets/proteger.png" width="32" height="32" alt="" class="d-inline-block align-top brand-mark"> Denuncia Online
+                <img src="assets/proteger.png" width="32" height="32" alt="" class="d-inline-block align-top brand-mark"> Red Violeta
             </a>
 
             <button
@@ -18,42 +18,80 @@
               <span></span>
             </button>
 
-            <div class="nav-drawer" id="siteMenu" [class.is-open]="menuOpen">
-                <div class="nav-drawer-head">
-                    <p>Menú</p>
-                    <button type="button" class="nav-drawer-close" (click)="closeMenu()" aria-label="Cerrar menú">
-                      Cerrar
+            <ul class="navbar-nav nav-links-desktop">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/inicio" routerLinkActive="is-active" ariaCurrentWhenActive="page">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <button
+                      type="button"
+                      class="nav-link nav-help-btn"
+                      aria-haspopup="dialog"
+                      aria-controls="modalAyuda"
+                      (click)="openHelp()"
+                    >
+                      Ayuda
                     </button>
-                </div>
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" routerLink="/inicio" routerLinkActive="is-active" ariaCurrentWhenActive="page" (click)="closeMenu()">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <button
-                          type="button"
-                          class="nav-link nav-help-btn"
-                          aria-haspopup="dialog"
-                          aria-controls="modalAyuda"
-                          (click)="openHelp()"
-                        >
-                          Ayuda
-                        </button>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" routerLink="/novedades" routerLinkActive="is-active" ariaCurrentWhenActive="page" (click)="closeMenu()">Novedades</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" routerLink="/formulario-denuncias" routerLinkActive="is-active" ariaCurrentWhenActive="page" (click)="closeMenu()">Registrar Denuncia</a>
-                    </li>
-                </ul>
-            </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/novedades" routerLinkActive="is-active" ariaCurrentWhenActive="page">Novedades</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/formulario-denuncias" routerLinkActive="is-active" ariaCurrentWhenActive="page">Registrar Denuncia</a>
+                </li>
+            </ul>
         </div>
     </nav>
 
-    @if (menuOpen) {
-      <button type="button" class="nav-backdrop" aria-label="Cerrar menú" (click)="closeMenu()"></button>
-    }
+    <button
+      type="button"
+      class="nav-backdrop"
+      [class.is-open]="menuOpen"
+      [attr.tabindex]="menuOpen ? 0 : -1"
+      aria-label="Cerrar menú"
+      (click)="closeMenu()"
+    ></button>
+
+    <div
+      class="nav-drawer"
+      id="siteMenu"
+      [class.is-open]="menuOpen"
+      [attr.aria-hidden]="!menuOpen"
+    >
+        <div class="nav-drawer-head">
+            <div>
+                <p>Menú</p>
+                <strong>Red Violeta</strong>
+            </div>
+            <button type="button" class="nav-drawer-close" (click)="closeMenu()" aria-label="Cerrar menú">
+              <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+                <path fill="currentColor" d="M3.2 3.2a.75.75 0 011.06 0L8 6.94l3.74-3.74a.75.75 0 111.06 1.06L9.06 8l3.74 3.74a.75.75 0 11-1.06 1.06L8 9.06l-3.74 3.74a.75.75 0 11-1.06-1.06L6.94 8 3.2 4.26a.75.75 0 010-1.06z"/>
+              </svg>
+            </button>
+        </div>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/inicio" routerLinkActive="is-active" ariaCurrentWhenActive="page" (click)="closeMenu()">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <button
+                  type="button"
+                  class="nav-link nav-help-btn"
+                  aria-haspopup="dialog"
+                  aria-controls="modalAyuda"
+                  (click)="openHelp()"
+                >
+                  Ayuda
+                </button>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/novedades" routerLinkActive="is-active" ariaCurrentWhenActive="page" (click)="closeMenu()">Novedades</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/formulario-denuncias" routerLinkActive="is-active" ariaCurrentWhenActive="page" (click)="closeMenu()">Registrar Denuncia</a>
+            </li>
+        </ul>
+    </div>
 
     <dialog
       #helpDialog
