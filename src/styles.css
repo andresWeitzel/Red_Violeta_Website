@@ -473,6 +473,9 @@ body.nav-locked {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23934866' d='M1.2 1.3L6 6.1l4.8-4.8'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 0.75rem center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .news-search input:focus,
@@ -485,13 +488,28 @@ body.nav-locked {
 @media (max-width: 767.98px) {
   .news-toolbar {
     grid-template-columns: 1fr;
-    padding: 0.75rem;
+    gap: 0.65rem;
+    padding: 0.7rem;
+  }
+
+  .news-search .news-field-label {
+    display: none;
   }
 
   .news-toolbar-fields {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.7rem;
+    grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+    gap: 0.55rem;
+  }
+
+  .news-select select {
+    font-size: 0.9rem;
+    padding: 0.42rem 1.55rem 0.42rem 0.6rem;
+    background-position: right 0.55rem center;
+  }
+
+  .news-search input {
+    font-size: 1rem;
   }
 }
 
