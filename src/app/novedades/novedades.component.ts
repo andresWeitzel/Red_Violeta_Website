@@ -38,6 +38,7 @@ export class NovedadesComponent {
 
   selectedKind: 'todas' | NewsKind = 'todas';
   selectedYear: number | 'todos' | 'anteriores' = 'todos';
+  searchQuery = '';
   readonly recentYears = [2026, 2025, 2024, 2023, 2022, 2021, 2020];
   private readonly libraryStep = 4;
   libraryVisibleCount = this.libraryStep;
@@ -1767,7 +1768,13 @@ export class NovedadesComponent {
     return this.news.filter((item) => item.year < 2020).length;
   }
 
+  get yearValue(): string {
+    return String(this.selectedYear);
+  }
+
   get filteredNews(): NewsItem[] {
+    const query = this.searchQuery.trim().toLowerCase();
+
     return this.news
       .filter((item) => this.selectedKind === 'todas' || item.kind === this.selectedKind)
       .filter((item) => {
@@ -1778,6 +1785,15 @@ export class NovedadesComponent {
           return item.year < 2020;
         }
         return item.year === this.selectedYear;
+      })
+      .filter((item) => {
+        if (!query) {
+          return true;
+        }
+        return [item.title, item.excerpt, item.source, item.tag, item.linkLabel]
+          .join(' ')
+          .toLowerCase()
+          .includes(query);
       })
       .sort((a, b) => b.date.localeCompare(a.date));
   }
@@ -1814,8 +1830,27 @@ export class NovedadesComponent {
     this.resetCarousel();
   }
 
+  setKindFromSelect(event: Event): void {
+    this.setKind((event.target as HTMLSelectElement).value as 'todas' | NewsKind);
+  }
+
   setYear(year: number | 'todos' | 'anteriores'): void {
     this.selectedYear = year;
+    this.libraryVisibleCount = this.libraryStep;
+    this.resetCarousel();
+  }
+
+  setYearFromSelect(event: Event): void {
+    const value = (event.target as HTMLSelectElement).value;
+    if (value === 'todos' || value === 'anteriores') {
+      this.setYear(value);
+      return;
+    }
+    this.setYear(Number(value));
+  }
+
+  setSearch(event: Event): void {
+    this.searchQuery = (event.target as HTMLInputElement).value;
     this.libraryVisibleCount = this.libraryStep;
     this.resetCarousel();
   }

@@ -125,42 +125,6 @@
   color: var(--rv-primary-dark);
 }
 
-.news-filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-bottom: 0.55rem;
-}
-
-.news-chip {
-  min-height: 36px;
-  padding: 0.28rem 0.8rem;
-  border: 1px solid var(--rv-line);
-  border-radius: 999px;
-  background: #fff;
-  color: var(--rv-ink);
-  font-size: 0.82rem;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.news-chip.is-active {
-  background: var(--rv-primary);
-  border-color: var(--rv-primary);
-  color: #fff;
-}
-
-.news-chip--older {
-  background: var(--rv-soft);
-  color: var(--rv-muted);
-}
-
-.news-chip--older.is-active {
-  background: var(--rv-primary-dark);
-  border-color: var(--rv-primary-dark);
-  color: #fff;
-}
-
 .news-count,
 .news-empty {
   margin: 0.7rem 0 1.15rem;

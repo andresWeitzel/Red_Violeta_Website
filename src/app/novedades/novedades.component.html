@@ -4,7 +4,7 @@
       <p class="section-kicker">Actualidad</p>
       <h1 id="news-title">Novedades y recursos</h1>
       <p class="section-lead">
-        Notas, programas, informes y normativa oficial. Filtrá por tipo o por año; el catálogo se puede ir ampliando.
+        Notas, programas, informes y normativa oficial. Buscá o filtrá por tipo y año.
       </p>
       <p class="news-updated">Actualizado en {{ catalogUpdated }}</p>
     </header>
@@ -27,54 +27,54 @@
         </div>
       </div>
 
-      <div class="news-filters" role="group" aria-label="Filtro por tipo">
-        @for (kind of kinds; track kind.id) {
-          <button
-            type="button"
-            class="news-chip"
-            [class.is-active]="selectedKind === kind.id"
-            (click)="setKind(kind.id)"
-          >
-            {{ kind.label }}
-          </button>
-        }
-      </div>
-
-      <div class="news-filters" role="group" aria-label="Filtro por año">
-        <button
-          type="button"
-          class="news-chip"
-          [class.is-active]="selectedYear === 'todos'"
-          (click)="setYear('todos')"
-        >
-          Todos los años
-        </button>
-        @for (year of recentYears; track year) {
-          <button
-            type="button"
-            class="news-chip"
-            [class.is-active]="selectedYear === year"
-            (click)="setYear(year)"
-          >
-            {{ year }}
-          </button>
-        }
-        @if (olderCount > 0) {
-          <button
-            type="button"
-            class="news-chip news-chip--older"
-            [class.is-active]="selectedYear === 'anteriores'"
-            (click)="setYear('anteriores')"
-          >
-            Antes de 2020 ({{ olderCount }})
-          </button>
-        }
+      <div class="news-toolbar">
+        <label class="news-search">
+          <span class="news-field-label">Buscar</span>
+          <span class="news-search-field">
+            <span class="news-search-icon" aria-hidden="true">
+              <svg viewBox="0 0 16 16" width="16" height="16">
+                <path fill="currentColor" d="M11.5 10.4a5.6 5.6 0 10-1.1 1.1l3.05 3.05a.8.8 0 001.13-1.13L11.5 10.4zM6.8 10.4a3.6 3.6 0 110-7.2 3.6 3.6 0 010 7.2z"/>
+              </svg>
+            </span>
+            <input
+              type="search"
+              [value]="searchQuery"
+              (input)="setSearch($event)"
+              placeholder="Título, organismo o tema"
+              autocomplete="off"
+              enterkeyhint="search"
+              aria-label="Buscar novedades"
+            />
+          </span>
+        </label>
+        <div class="news-toolbar-fields">
+          <label class="news-select">
+            <span class="news-field-label">Tipo</span>
+            <select [value]="selectedKind" (change)="setKindFromSelect($event)" aria-label="Filtrar por tipo">
+              @for (kind of kinds; track kind.id) {
+                <option [value]="kind.id">{{ kind.label }}</option>
+              }
+            </select>
+          </label>
+          <label class="news-select">
+            <span class="news-field-label">Año</span>
+            <select [value]="yearValue" (change)="setYearFromSelect($event)" aria-label="Filtrar por año">
+              <option value="todos">Todos los años</option>
+              @for (year of recentYears; track year) {
+                <option [value]="year">{{ year }}</option>
+              }
+              @if (olderCount > 0) {
+                <option value="anteriores">Antes de 2020 ({{ olderCount }})</option>
+              }
+            </select>
+          </label>
+        </div>
       </div>
 
       <p class="news-count">{{ filteredNews.length }} resultado{{ filteredNews.length === 1 ? '' : 's' }}</p>
 
       @if (filteredNews.length === 0) {
-        <p class="news-empty">No hay novedades con esos filtros. Probá otra combinación.</p>
+        <p class="news-empty">No hay novedades con esa búsqueda o esos filtros. Probá otra combinación.</p>
       } @else {
         <div class="stories-carousel" #newsCarousel tabindex="0" aria-label="Carrusel de novedades">
           @for (item of featuredNews; track item.id) {

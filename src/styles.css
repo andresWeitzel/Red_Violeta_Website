@@ -398,6 +398,103 @@ body.nav-locked {
   border-color: var(--rv-primary);
 }
 
+.news-toolbar {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(8.5rem, 0.7fr) minmax(11rem, 0.85fr);
+  gap: 0.7rem 0.85rem;
+  align-items: end;
+  margin-bottom: 0.85rem;
+  padding: 0.85rem;
+  background: #fff;
+  border: 1px solid var(--rv-line);
+  border-radius: 18px;
+}
+
+.news-toolbar-fields {
+  display: contents;
+}
+
+.news-search,
+.news-select {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.news-field-label {
+  display: block;
+  margin-bottom: 0.28rem;
+  color: var(--rv-muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.news-search-field {
+  position: relative;
+  display: block;
+}
+
+.news-search-icon {
+  position: absolute;
+  top: 50%;
+  left: 0.85rem;
+  display: flex;
+  color: var(--rv-primary-dark);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.news-search input,
+.news-select select {
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid var(--rv-line);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--rv-ink);
+  font: inherit;
+  font-size: 1rem;
+}
+
+.news-search input {
+  padding: 0.5rem 0.85rem 0.5rem 2.4rem;
+  appearance: none;
+}
+
+.news-search input::placeholder {
+  color: var(--rv-muted);
+}
+
+.news-select select {
+  padding: 0.45rem 2rem 0.45rem 0.75rem;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23934866' d='M1.2 1.3L6 6.1l4.8-4.8'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+}
+
+.news-search input:focus,
+.news-select select:focus {
+  outline: 2px solid var(--rv-primary);
+  outline-offset: 2px;
+  border-color: var(--rv-primary);
+}
+
+@media (max-width: 767.98px) {
+  .news-toolbar {
+    grid-template-columns: 1fr;
+    padding: 0.75rem;
+  }
+
+  .news-toolbar-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.7rem;
+  }
+}
+
 .help-dialog {
   margin: auto;
   background: #fff;
