@@ -1,42 +1,49 @@
 <div align="center">
-  <img src="./public/assets/proteger.png" alt="Red Violeta" width="96" />
+
+![Red Violeta](./public/assets/repository/01-cover-inicio.png)
+
 </div>
 
 <div align="right">
-  <img src="https://img.shields.io/badge/Angular-22.1-DD0031?logo=angular&logoColor=white" alt="Angular 22" />
-  &nbsp;
-  <img src="https://img.shields.io/badge/TypeScript-5.x-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
-  &nbsp;
-  <img src="https://img.shields.io/badge/Bootstrap-4.5-7952B3?logo=bootstrap&logoColor=white" alt="Bootstrap 4.5" />
-  &nbsp;
-  <img src="https://img.shields.io/badge/Node.js-22+-339933?logo=nodedotjs&logoColor=white" alt="Node.js 22+" />
-  &nbsp;
-  <img src="https://img.shields.io/badge/Netlify-deploy-00C7B7?logo=netlify&logoColor=white" alt="Netlify" />
+  <img width="25" height="25" src="./public/assets/icons/frontend/png/angular.png" alt="Angular" />
+  <img width="25" height="25" src="./public/assets/icons/backend/javascript-typescript/png/typescript.png" alt="TypeScript" />
+  <img width="25" height="25" src="./public/assets/icons/frontend/png/bootstrap.png" alt="Bootstrap" />
+  <img width="25" height="25" src="./public/assets/icons/backend/javascript-typescript/png/nodejs.png" alt="Node.js" />
+  <img width="25" height="25" src="./public/assets/icons/frontend/png/jquery.png" alt="jQuery" />
+  <img width="25" height="25" src="./public/assets/icons/devops/png/npm.png" alt="npm" />
+  <img width="25" height="25" src="./public/assets/icons/devops/png/git.png" alt="Git" />
+  <img width="25" height="25" src="./public/assets/icons/devops/png/github.png" alt="GitHub" />
 </div>
+
+<br>
 
 <br>
 
 <div align="right">
   <a href="./README.md">
-    <img src="https://flagcdn.com/w40/ar.png" width="40" height="30" alt="Español" />
+    <img src="./public/assets/translation/arg-flag.png" width="65" height="40" alt="Español" />
   </a>
-  &nbsp;
   <a href="./public/assets/translation/README.en.md">
-    <img src="https://flagcdn.com/w40/us.png" width="40" height="30" alt="English" />
+    <img src="./public/assets/translation/eeuu-flag.png" width="65" height="40" alt="English" />
   </a>
 </div>
+
+<br>
 
 <div align="center">
 
-# Red Violeta ![status](https://img.shields.io/badge/status-migración_UI-b45c7e)
+# Red Violeta ![(status-completed)](./public/assets/icons/badges/status-completed.svg)
 
 </div>
 
-Sitio de **contención, líneas de ayuda, novedades y recursos oficiales** frente a violencias de género, discriminación y trata. Frontend en **Angular 22**, sin backend propio: la información se consulta en el cliente y las denuncias del formulario **no se despachan** a casillas oficiales (versión de demostración).
+**Red Violeta** es una red de contención para quien enfrenta **violencias de género, discriminación o trata** en Argentina. Junta en un solo lugar lo que suele estar disperso: **líneas 24 h**, un **mapa de organismos**, **novedades** y **sitios oficiales** de Nación, CABA y Provincia de Buenos Aires.
 
-* [**App (producción):**](https://web-app-denuncias.netlify.app/)
-* [**App (local):**](http://localhost:4200/)
-* [**Repositorio:**](https://github.com/andresWeitzel/Red_Violeta_Website)
+En Inicio está la ayuda inmediata: 144, 137 y 145 (llamar, WhatsApp o email), la guía *Cómo pedir ayuda* (911 si hay peligro ahora, orientación o dejar constancia) y el mapa para llegar a un organismo. También hay un catálogo de novedades, un formulario para registrar la situación y acceso a trámites y asistencia del Estado. Pensada para desktop y celular, con un aviso si el dispositivo es compartido.
+
+Frontend en **Angular 22**.
+
+* [**App (producción)**](https://red-violeta.vercel.app/inicio)
+* [**App (local)**](http://localhost:4200/)
 
 <br>
 
@@ -59,6 +66,7 @@ Sitio de **contención, líneas de ayuda, novedades y recursos oficiales** frent
 * [1.1) Ejecución.](#11-ejecución-)
 * [1.2) Estructura.](#12-estructura-)
 * [1.3) Tecnologías.](#13-tecnologías-)
+* [1.4) Capturas de pantalla.](#14-capturas-de-pantalla-)
 
 ### Sección 2) Páginas, rutas y comportamiento
 
@@ -75,7 +83,7 @@ Sitio de **contención, líneas de ayuda, novedades y recursos oficiales** frent
 
 ### Sección 4) Deploy, contribuir y referencias
 
-* [4.0) Deploy (Netlify).](#40-deploy-netlify-)
+* [4.0) Deploy (Vercel).](#40-deploy-vercel-)
 * [4.1) Contribuir.](#41-contribuir-)
 * [4.2) Referencias.](#42-referencias-)
 
@@ -92,28 +100,19 @@ Sitio de **contención, líneas de ayuda, novedades y recursos oficiales** frent
 
 <br>
 
-**Red Violeta** es una aplicación web de orientación. El foco no es “denuncia online”: es acercar **líneas 24 h**, organismos, mapa de atención y un catálogo de notas, informes, programas y normativa.
+**Red Violeta** está pensada para el momento en que alguien necesita **saber qué hacer y a quién llamar**. No reemplaza a las líneas ni a los organismos: los acerca, con lenguaje claro, en una interfaz usable en desktop y en el celular.
 
-**Qué entrega el producto**
+**Qué hay en el sitio**
 
-* **Inicio:** carrusel, líneas 144 / 137 / 145 (teléfono, WhatsApp, email), guía de tres caminos, mapa de organismos y sitios oficiales con “Ver más”.
-* **Novedades:** destacadas en carrusel, biblioteca con “Ver más”, buscador y filtros por tipo y año.
-* **Formulario:** deja constancia en una demo; al confirmar, se navega a **líneas de atención**. No hay envío de correo a inboxes oficiales.
-* **Navegación:** barra fija, menú lateral en mobile, pie compacto (marca, líneas, sitio).
-* **Responsive:** desktop y mobile (filtros compactos, mapa en pestañas, pie en columnas).
+* **Líneas de ayuda 24 h:** 144 (violencia de género), 137 (víctimas de violencia familiar y sexual) y 145 (trata). Teléfono, WhatsApp y email, más el 911 si hay peligro inmediato.
+* **Guía Cómo pedir ayuda:** tres caminos según lo que haga falta ahora — resguardo, orientación o dejar constancia.
+* **Mapa Dónde pedir ayuda:** organismos (La Plata, INADI, OVD y más) con llamar, cómo llegar y sitio oficial.
+* **Sitios oficiales:** Nación, CABA y Provincia de Buenos Aires — derechos, denuncias y asistencia del Estado, con “Ver más sitios”.
+* **Novedades:** destacadas en carrusel y una biblioteca con buscador y filtros por tipo y año (notas, informes, programas, normativa).
+* **Registrar denuncia:** formulario para dejar constancia y seguir hacia las **líneas de atención**.
+* **Cuidado en el uso:** aviso para preferir una llamada y borrar el historial si la computadora o el celular son compartidos.
 
-**Migración (rama `feature-02-update-interfaces`)**
-
-* Angular **22.1** (standalone, `application` builder).
-* Rebrand **Denuncia Online → Red Violeta** (pestaña, navbar, footer).
-* Scroll al tope en cada cambio de ruta; anclas `#lineas-de-ayuda` y `#sitios-oficiales`.
-* UI de contención: líneas de ayuda primero; el formulario queda como camino secundario.
-
-**Qué no es**
-
-* No es un canal oficial de denuncia policial o judicial.
-* No despacha mail a 144 / 137 / 145 (riesgo de spam y molestia a líneas reales).
-* No hay API ni base de datos propia: el catálogo vive en el cliente.
+Un frontend **Angular 22**, listo para consultar: la ayuda se ve primero y el trámite, después.
 
 </details>
 
@@ -160,9 +159,20 @@ No hace falta `.env`: no hay claves de API ni ORM.
 
 ```
 Red_Violeta_Website/
-├── public/assets/                 # Logo, fotos, traducción del README
+├── public/assets/                 # Logo, fotos, íconos y traducción del README
 │   ├── proteger.png               # Marca y favicon
-│   └── translation/README.en.md
+│   ├── icons/                     # Íconos locales (mismo set que el repo de referencia)
+│   │   ├── badges/                # status-completed (activo en el README)
+│   │   ├── frontend/png/          # Angular, Bootstrap, HTML, CSS, jQuery
+│   │   ├── backend/javascript-typescript/png/  # Node.js, TypeScript
+│   │   └── devops/png/            # Git, GitHub, npm
+│   ├── repository/                # Capturas del README (ver 1.4)
+│   │   ├── 01-cover-inicio.png    # Portada del repositorio (hero de Inicio)
+│   │   ├── 02-inicio-mapa.png
+│   │   ├── 03-ayuda-guia.png
+│   │   ├── 04-novedades.png
+│   │   └── 05-inicio-sitios.png
+│   └── translation/               # README.en.md, banderas AR / US
 ├── src/
 │   ├── index.html                 # Título Red Violeta, Bootstrap 4.5 CDN
 │   ├── styles.css                 # Tokens, navbar drawer, toolbar de novedades, pie
@@ -202,7 +212,7 @@ Red_Violeta_Website/
 | [RxJS](https://rxjs.dev/) | **7.8** | Eventos del router |
 | [Bootstrap](https://getbootstrap.com/docs/4.5/) | **4.5.3** | Grid del carrusel y columnas (CDN) |
 | [Manrope](https://fonts.google.com/specimen/Manrope) | **Google Fonts** | Tipografía |
-| [Netlify](https://www.netlify.com/) | — | Hosting estático |
+| [Vercel](https://vercel.com/) | — | Hosting estático |
 | [Node.js](https://nodejs.org/) | **≥ 22.22.3** | Tooling |
 | [Vitest](https://vitest.dev/) | **4.x** | Tests unitarios |
 | [Prettier](https://prettier.io/) | **3.8** | Formato |
@@ -214,7 +224,46 @@ Red_Violeta_Website/
 * Angular: https://angular.dev/
 * Angular CLI: https://angular.dev/tools/cli
 * Bootstrap 4.5: https://getbootstrap.com/docs/4.5/getting-started/introduction/
-* Netlify: https://docs.netlify.com/
+* Vercel: https://vercel.com/docs
+
+</details>
+
+### 1.4) Capturas de pantalla [🔝](#índice-)
+
+<details>
+  <summary>Ver detalle</summary>
+
+<br>
+
+Capturas de la app en desktop. Están en `public/assets/repository/`. **`01-cover-inicio.png`** es también el banner de este README.
+
+| Archivo | Qué es |
+|---------|--------|
+| `01-cover-inicio.png` | **Inicio (hero).** Dos mujeres, mensaje *No más violencia. Contención y asistencia*, líneas 144 / 137 y CTA *Ver líneas de ayuda*. |
+| `02-inicio-mapa.png` | **Inicio — mapa.** Sección *Dónde pedir ayuda*: pestañas de organismos (La Plata, INADI, OVD, etc.) y ficha con llamar / cómo llegar / sitio. |
+| `03-ayuda-guia.png` | **Inicio — guía.** Modal *Cómo pedir ayuda*: peligro ahora (911), orientación (144 / 137 / 145) y dejar constancia. |
+| `04-novedades.png` | **Novedades.** Buscador, filtros Tipo / Año y carrusel de destacadas. |
+| `05-inicio-sitios.png` | **Inicio — sitios oficiales y pie.** Grilla Nación / CABA / PBA, aviso de seguridad y footer (marca, líneas, sitio). |
+
+<p align="center"><img src="./public/assets/repository/01-cover-inicio.png" alt="Inicio: hero de contención" width="100%" /></p>
+
+<p align="center"><em>01 — Portada de Inicio</em></p>
+
+<p align="center"><img src="./public/assets/repository/02-inicio-mapa.png" alt="Inicio: mapa Dónde pedir ayuda" width="100%" /></p>
+
+<p align="center"><em>02 — Mapa de organismos</em></p>
+
+<p align="center"><img src="./public/assets/repository/03-ayuda-guia.png" alt="Inicio: guía Cómo pedir ayuda" width="100%" /></p>
+
+<p align="center"><em>03 — Guía Cómo pedir ayuda</em></p>
+
+<p align="center"><img src="./public/assets/repository/04-novedades.png" alt="Novedades: buscador, filtros y carrusel" width="100%" /></p>
+
+<p align="center"><em>04 — Novedades</em></p>
+
+<p align="center"><img src="./public/assets/repository/05-inicio-sitios.png" alt="Inicio: sitios oficiales y pie" width="100%" /></p>
+
+<p align="center"><em>05 — Sitios oficiales y pie</em></p>
 
 </details>
 
@@ -232,7 +281,7 @@ Red_Violeta_Website/
 | Entorno | Base URL |
 |---------|----------|
 | **Local** | `http://localhost:4200` |
-| **Producción** | [web-app-denuncias.netlify.app](https://web-app-denuncias.netlify.app/) |
+| **Producción** | [red-violeta.vercel.app](https://red-violeta.vercel.app/inicio) |
 
 1. Entra a `/` → redirect a `/inicio`.
 2. Ve líneas de ayuda, mapa y sitios oficiales.
@@ -293,8 +342,8 @@ En mobile: menú hamburguesa (drawer a la derecha). En desktop: links en la barr
 
 **Formulario (demo)**
 
-* Datos (o anónimo), email obligatorio, tipo, relato (≥ 30 caracteres), al menos un archivo, consentimiento.
-* Mobile: campos de a dos columnas, relato más bajo, menos padding.
+* Datos (o anónimo), email obligatorio, tipo, comentario (≥ 10 caracteres), archivos opcionales, consentimiento.
+* Mobile: campos de a dos columnas, comentario más bajo, menos padding.
 * Enviar válido → diálogo de demostración. **No** se manda correo a líneas reales.
 * Sí / No → `/lineas-de-atencion`.
 
@@ -339,7 +388,7 @@ Estilos compartidos (toolbar de novedades, fade de biblioteca, drawer) van en `s
 
 ## Sección 4) Deploy, contribuir y referencias
 
-### 4.0) Deploy (Netlify) [🔝](#índice-)
+### 4.0) Deploy (Vercel) [🔝](#índice-)
 
 <details>
   <summary>Ver detalle</summary>
@@ -350,14 +399,9 @@ npm run build
 
 Salida: `dist/proyecto01/browser/` (builder `application` de Angular 22).
 
-En Netlify: publish directory = esa carpeta; redirects SPA → `index.html`. CLI:
+En Vercel: raíz del repo, build `npm run build`, output `dist/proyecto01/browser`. La SPA reescribe rutas a `index.html`.
 
-```bash
-npx netlify-cli login
-npx netlify-cli deploy --prod
-```
-
-App actual: [https://web-app-denuncias.netlify.app/](https://web-app-denuncias.netlify.app/)
+App en producción: [https://red-violeta.vercel.app/inicio](https://red-violeta.vercel.app/inicio)
 
 </details>
 
@@ -369,7 +413,7 @@ App actual: [https://web-app-denuncias.netlify.app/](https://web-app-denuncias.n
 1. Fork.
 2. Rama (`git checkout -b feature/mi-mejora`).
 3. Commit con mensaje claro.
-4. Push y Pull Request hacia `feature-02-update-interfaces` o la rama que indiquen.
+4. Push y Pull Request hacia la rama que indiquen.
 
 No subas secretos. Esta app no usa `.env` en el cliente.
 
@@ -381,7 +425,8 @@ No subas secretos. Esta app no usa `.env` en el cliente.
   <summary>Ver detalle</summary>
 
 * **Repositorio:** [github.com/andresWeitzel/Red_Violeta_Website](https://github.com/andresWeitzel/Red_Violeta_Website)
-* **Producción:** [web-app-denuncias.netlify.app](https://web-app-denuncias.netlify.app/)
+* **Producción:** [red-violeta.vercel.app](https://red-violeta.vercel.app/inicio)
+* **Capturas:** [public/assets/repository/](./public/assets/repository/)
 * **README (EN):** [public/assets/translation/README.en.md](./public/assets/translation/README.en.md)
 * Plantilla de documentación: [ApiRest Electronic Devices ExpressJS](https://github.com/andresWeitzel/ApiRest_Electronic_Devices_ExpressJS)
 * Línea 144 Nación: https://www.argentina.gob.ar/linea-144

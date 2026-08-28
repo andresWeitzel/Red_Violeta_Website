@@ -127,12 +127,20 @@
   resize: vertical;
 }
 
+.form-block legend em {
+  font-style: normal;
+  font-weight: 500;
+  color: var(--rv-muted, #74606a);
+}
+
 .field.has-error input,
 .field.has-error select,
 .field.has-error textarea,
 .file-drop.has-error,
 .check-row.has-error {
-  border-color: #a33b57;
+  border-color: #c6284a;
+  background: #fff5f7;
+  box-shadow: 0 0 0 3px rgba(198, 40, 74, 0.16);
 }
 
 .field-error {
