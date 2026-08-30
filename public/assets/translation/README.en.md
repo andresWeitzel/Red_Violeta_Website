@@ -20,9 +20,9 @@
 <br>
 
 <div align="right">
-  <a href="../../../README.md">
-    <img src="./arg-flag.png" width="32" height="20" alt="" style="width:32px;height:20px;object-fit:fill;vertical-align:middle;" />
-    Español
+  <a href="../../../README.md" style="text-decoration:none;color:inherit;">
+    <img src="./arg-flag.png" width="28" height="18" alt="" align="absmiddle" />
+    <b>Español</b>
   </a>
 </div>
 
