@@ -27,12 +27,12 @@ export class CarrouselComponent implements AfterViewInit {
       text: 'No fue un mal día, no fue culpa de nadie. Hay quien te escucha.',
     },
     {
-      id: 'identidad',
-      src: 'assets/violencia2.jpg',
-      alt: 'Manos formando un corazón frente a una bandera del orgullo',
-      kicker: 'Identidad',
-      title: 'Tu identidad es tuya',
-      text: 'La violencia y la discriminación no lo son. Pedí ayuda.',
+      id: 'contencion',
+      src: 'assets/news/news-helpline.jpg',
+      alt: 'Manos con un teléfono, pidiendo ayuda',
+      kicker: 'Líneas 24 h',
+      title: 'Hay quien te escucha',
+      text: '144, 137 y 145 atienden las 24 horas. Llamá o escribí: no tenés que pasar esto sola.',
     },
     {
       id: 'discriminacion',
