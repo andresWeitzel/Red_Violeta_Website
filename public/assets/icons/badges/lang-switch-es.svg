@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="118" height="36" role="img" aria-label="Español">
+  <title>Español</title>
+  <rect width="118" height="36" rx="8" fill="#3a4250" stroke="#2b313c"/>
+  <g transform="translate(6,5)">
+    <rect width="44" height="26" fill="#74acdf"/>
+    <rect y="8.7" width="44" height="8.6" fill="#fff"/>
+    <circle cx="22" cy="13" r="3" fill="#f6b40e"/>
+  </g>
+  <text x="58" y="24" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" font-size="15" font-weight="700" fill="#fff">[ES]</text>
+</svg>
