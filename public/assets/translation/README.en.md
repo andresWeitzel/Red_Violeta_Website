@@ -5,14 +5,14 @@
 </div>
 
 <div align="right">
-  <img width="25" height="25" src="../icons/frontend/png/angular.png" alt="Angular" />
-  <img width="25" height="25" src="../icons/backend/javascript-typescript/png/typescript.png" alt="TypeScript" />
-  <img width="25" height="25" src="../icons/frontend/png/bootstrap.png" alt="Bootstrap" />
-  <img width="25" height="25" src="../icons/backend/javascript-typescript/png/nodejs.png" alt="Node.js" />
-  <img width="25" height="25" src="../icons/frontend/png/jquery.png" alt="jQuery" />
-  <img width="25" height="25" src="../icons/devops/png/npm.png" alt="npm" />
-  <img width="25" height="25" src="../icons/devops/png/git.png" alt="Git" />
-  <img width="25" height="25" src="../icons/devops/png/github.png" alt="GitHub" />
+  <img width="25" height="25" src="../icons/frontend/png/angular.png" alt="Angular" style="vertical-align:middle;" />
+  <img width="25" height="25" src="../icons/devops/png/npm.png" alt="npm" style="vertical-align:middle;" />
+  <img width="25" height="25" src="../icons/devops/png/git.png" alt="Git" style="vertical-align:middle;" />
+  <img width="25" height="25" src="../icons/frontend/png/bootstrap.png" alt="Bootstrap" style="vertical-align:middle;" />
+  <img width="25" height="25" src="../icons/backend/javascript-typescript/png/typescript.png" alt="TypeScript" style="vertical-align:middle;" />
+  <img width="25" height="25" src="../icons/frontend/png/jquery.png" alt="jQuery" style="vertical-align:middle;" />
+  <img width="25" height="25" src="../icons/backend/javascript-typescript/png/nodejs.png" alt="Node.js" style="vertical-align:middle;" />
+  <img width="25" height="25" src="../icons/devops/svg/github-light.svg" alt="GitHub" style="vertical-align:middle;" />
 </div>
 
 <br>
@@ -21,10 +21,8 @@
 
 <div align="right">
   <a href="../../../README.md">
-    <img src="./arg-flag.png" width="65" height="40" alt="Español" />
-  </a>
-  <a href="./README.en.md">
-    <img src="./eeuu-flag.png" width="65" height="40" alt="English" />
+    <img src="./arg-flag.png" width="32" height="20" alt="" style="width:32px;height:20px;object-fit:fill;vertical-align:middle;" />
+    Español
   </a>
 </div>
 
