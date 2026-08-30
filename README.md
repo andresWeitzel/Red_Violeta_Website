@@ -20,9 +20,9 @@
 <br>
 
 <div align="right">
-  <a href="./public/assets/translation/README.en.md">
-    <img src="./public/assets/translation/eeuu-flag.png" width="32" height="20" alt="" style="width:32px;height:20px;object-fit:fill;vertical-align:middle;" />
-    English
+  <a href="./public/assets/translation/README.en.md" style="text-decoration:none;color:inherit;">
+    <img src="./public/assets/translation/eeuu-flag.png" width="28" height="18" alt="" align="absmiddle" />
+    <b>English</b>
   </a>
 </div>
 
