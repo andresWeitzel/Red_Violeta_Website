@@ -1,17 +1,14 @@
 <div align="center">
-
-![Red Violeta](./public/assets/repository/01-cover-inicio.png)
-
-</div>
-
+<img src="./public/assets/repository/01-cover-inicio.png" alt="Red Violeta" />
 <div align="right">
-  <img width="25" height="25" src="./public/assets/icons/frontend/png/angular.png" alt="Angular" style="vertical-align:middle;" />
-  <img width="25" height="25" src="./public/assets/icons/devops/png/npm.png" alt="npm" style="vertical-align:middle;" />
-  <img width="25" height="25" src="./public/assets/icons/devops/png/git.png" alt="Git" style="vertical-align:middle;" />
-  <img width="25" height="25" src="./public/assets/icons/frontend/png/bootstrap.png" alt="Bootstrap" style="vertical-align:middle;" />
-  <img width="25" height="25" src="./public/assets/icons/backend/javascript-typescript/png/typescript.png" alt="TypeScript" style="vertical-align:middle;" />
-  <img width="32" height="32" src="./public/assets/icons/frontend/png/jquery.png" alt="jQuery" style="vertical-align:middle;" />
-  <img width="25" height="25" src="./public/assets/icons/backend/javascript-typescript/png/nodejs.png" alt="Node.js" style="vertical-align:middle;" />
+<img width="16" height="16" src="./public/assets/icons/frontend/png/angular.png" alt="Angular" />
+<img width="16" height="16" src="./public/assets/icons/devops/png/npm.png" alt="npm" />
+<img width="16" height="16" src="./public/assets/icons/devops/png/git.png" alt="Git" />
+<img width="16" height="16" src="./public/assets/icons/frontend/png/bootstrap.png" alt="Bootstrap" />
+<img width="16" height="16" src="./public/assets/icons/backend/javascript-typescript/png/typescript.png" alt="TypeScript" />
+<img width="18" height="18" src="./public/assets/icons/frontend/png/jquery.png" alt="jQuery" />
+<img width="16" height="16" src="./public/assets/icons/backend/javascript-typescript/png/nodejs.png" alt="Node.js" />
+</div>
 </div>
 
 <br>
@@ -26,8 +23,6 @@
     <img src="./public/assets/translation/eeuu-flag.png" width="65" height="40" alt="Inglés" title="Inglés" />
   </a>
 </div>
-
-<br>
 
 <div align="center">
 
