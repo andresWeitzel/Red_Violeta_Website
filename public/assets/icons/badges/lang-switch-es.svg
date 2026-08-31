@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="116" height="40" role="img" aria-label="Espaùol">
+  <title>Espaùol</title>
+  <style>
+    .label { fill: #1f2328; }
+    @media (prefers-color-scheme: dark) {
+      .label { fill: #f0f6fc; }
+    }
+  </style>
+  <image x="0" y="0" width="65" height="40" preserveAspectRatio="xMidYMid meet" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAABkBAMAAADzmCa8AAAAMFBMVEX///90rN/R4/TWnkfetXjhwJTYqWPozqzAeRb7+fj06+Px49PLiyj2tA3emhHuqgxjkH10AAABxElEQVRYw+3XsUsCcRQHcBcTa+pf6F840fIcAj2vTMRBTuwkAk2zHAJPIo0WG27Q86C64FyC8uJqCY4rovFUGqS55XRpuCFxdTnLsT/gRRDv+wd84PF7vPd+jkXgOBBEEEEEEUQQQQQRRPAnuAQcxz+JeOk6qLgBQVZxbm7rcF7qUdLZlX0nWMG0dEux+4U8UNHuiPREZ5lEZeVGhBGv70ifp1hSqn4YLymToVwvEPZoKgUCOmktna71DR+pHEF4588KbfCzRBmfnAIAFwg2sybYQ6vWeco9AIBXrRjRt01zUGc8qgoAlgg6KgxHA9syktwOADh/Hww0J8Jnc8L3NiAepZwIBxpTwRq/e7NUEgbMNMyhbb4bMKCoB/tNc/plTjKelysAkMmXi4I5HZtWp0zkAUBZDu5Yo6E94I2P53mIxs5VY7tvs8Y+JXQCorGd6gnVeeX5eoAjW+sQfXNBasfF/nK3S26tgkybUIsMZ41iLqSpZaAB2/b7vMGSdgc0YN2R6zaVZbhDsBUgcpKmJyoFDmwzxx/P2mxh7wJuMW/OteN7gIveId66Do4gT5E/DfjBib8ABBFEEEEEEUQQQQR/E/wGy0wUk4S9/xcAAAAASUVORK5CYII=" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAABkBAMAAADzmCa8AAAAMFBMVEX///90rN/R4/TWnkfetXjhwJTYqWPozqzAeRb7+fj06+Px49PLiyj2tA3emhHuqgxjkH10AAABxElEQVRYw+3XsUsCcRQHcBcTa+pf6F840fIcAj2vTMRBTuwkAk2zHAJPIo0WG27Q86C64FyC8uJqCY4rovFUGqS55XRpuCFxdTnLsT/gRRDv+wd84PF7vPd+jkXgOBBEEEEEEUQQQQQRRPAnuAQcxz+JeOk6qLgBQVZxbm7rcF7qUdLZlX0nWMG0dEux+4U8UNHuiPREZ5lEZeVGhBGv70ifp1hSqn4YLymToVwvEPZoKgUCOmktna71DR+pHEF4588KbfCzRBmfnAIAFwg2sybYQ6vWeco9AIBXrRjRt01zUGc8qgoAlgg6KgxHA9syktwOADh/Hww0J8Jnc8L3NiAepZwIBxpTwRq/e7NUEgbMNMyhbb4bMKCoB/tNc/plTjKelysAkMmXi4I5HZtWp0zkAUBZDu5Yo6E94I2P53mIxs5VY7tvs8Y+JXQCorGd6gnVeeX5eoAjW+sQfXNBasfF/nK3S26tgkybUIsMZ41iLqSpZaAB2/b7vMGSdgc0YN2R6zaVZbhDsBUgcpKmJyoFDmwzxx/P2mxh7wJuMW/OteN7gIveId66Do4gT5E/DfjBib8ABBFEEEEEEUQQQQR/E/wGy0wUk4S9/xcAAAAASUVORK5CYII="/>
+  <text class="label" x="69" y="26" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" font-size="15" font-weight="700">[ES]</text>
+</svg>

@@ -10,9 +10,8 @@
   <img width="25" height="25" src="./public/assets/icons/devops/png/git.png" alt="Git" style="vertical-align:middle;" />
   <img width="25" height="25" src="./public/assets/icons/frontend/png/bootstrap.png" alt="Bootstrap" style="vertical-align:middle;" />
   <img width="25" height="25" src="./public/assets/icons/backend/javascript-typescript/png/typescript.png" alt="TypeScript" style="vertical-align:middle;" />
-  <img width="25" height="25" src="./public/assets/icons/frontend/png/jquery.png" alt="jQuery" style="vertical-align:middle;" />
+  <img width="32" height="32" src="./public/assets/icons/frontend/png/jquery.png" alt="jQuery" style="vertical-align:middle;" />
   <img width="25" height="25" src="./public/assets/icons/backend/javascript-typescript/png/nodejs.png" alt="Node.js" style="vertical-align:middle;" />
-  <img width="25" height="25" src="./public/assets/icons/devops/svg/github-light.svg" alt="GitHub" style="vertical-align:middle;" />
 </div>
 
 <br>
@@ -20,9 +19,11 @@
 <br>
 
 <div align="right">
-  <a href="./public/assets/translation/README.en.md" style="text-decoration:none;color:inherit;">
-    <img src="./public/assets/translation/eeuu-flag.png" width="28" height="18" alt="" align="absmiddle" />
-    <b>English</b>
+  <a href="./README.md" title="Español">
+    <img src="./public/assets/translation/arg-flag.png" width="65" height="40" alt="Español" title="Español" />
+  </a>
+  <a href="./public/assets/translation/README.en.md" title="Inglés">
+    <img src="./public/assets/translation/eeuu-flag.png" width="65" height="40" alt="Inglés" title="Inglés" />
   </a>
 </div>
 

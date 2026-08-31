@@ -10,9 +10,8 @@
   <img width="25" height="25" src="../icons/devops/png/git.png" alt="Git" style="vertical-align:middle;" />
   <img width="25" height="25" src="../icons/frontend/png/bootstrap.png" alt="Bootstrap" style="vertical-align:middle;" />
   <img width="25" height="25" src="../icons/backend/javascript-typescript/png/typescript.png" alt="TypeScript" style="vertical-align:middle;" />
-  <img width="25" height="25" src="../icons/frontend/png/jquery.png" alt="jQuery" style="vertical-align:middle;" />
+  <img width="32" height="32" src="../icons/frontend/png/jquery.png" alt="jQuery" style="vertical-align:middle;" />
   <img width="25" height="25" src="../icons/backend/javascript-typescript/png/nodejs.png" alt="Node.js" style="vertical-align:middle;" />
-  <img width="25" height="25" src="../icons/devops/svg/github-light.svg" alt="GitHub" style="vertical-align:middle;" />
 </div>
 
 <br>
@@ -20,9 +19,11 @@
 <br>
 
 <div align="right">
-  <a href="../../../README.md" style="text-decoration:none;color:inherit;">
-    <img src="./arg-flag.png" width="28" height="18" alt="" align="absmiddle" />
-    <b>Español</b>
+  <a href="../../../README.md" title="Spanish">
+    <img src="./arg-flag.png" width="65" height="40" alt="Spanish" title="Spanish" />
+  </a>
+  <a href="./README.en.md" title="English">
+    <img src="./eeuu-flag.png" width="65" height="40" alt="English" title="English" />
   </a>
 </div>
 
