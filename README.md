@@ -34,10 +34,7 @@
 
 En Inicio está la ayuda inmediata: 144, 137 y 145 (llamar, WhatsApp o email), la guía *Cómo pedir ayuda* (911 si hay peligro ahora, orientación o dejar constancia) y el mapa para llegar a un organismo. También hay un catálogo de novedades, un formulario para registrar la situación y acceso a trámites y asistencia del Estado. Pensada para desktop y celular, con un aviso si el dispositivo es compartido.
 
-Frontend en **Angular 22**.
-
-* [**App (producción)**](https://red-violeta.vercel.app/inicio)
-* [**App (local)**](http://localhost:4200/)
+<a href="https://red-violeta.vercel.app/inicio" target="_blank" rel="noopener noreferrer" title="Ver en vivo"><img src="./public/assets/icons/detail-actions/live-pill.png" alt="Live" height="30" border="0" /></a>
 
 <br>
 
@@ -157,6 +154,7 @@ Red_Violeta_Website/
 │   ├── proteger.png               # Marca y favicon
 │   ├── icons/                     # Íconos locales (mismo set que el repo de referencia)
 │   │   ├── badges/                # status-completed (activo en el README)
+│   │   ├── detail-actions/        # live-pill (app en producción)
 │   │   ├── frontend/png/          # Angular, Bootstrap, HTML, CSS, jQuery
 │   │   ├── backend/javascript-typescript/png/  # Node.js, TypeScript
 │   │   └── devops/png/            # Git, GitHub, npm

@@ -34,10 +34,8 @@
 
 Home puts help first: 144, 137 and 145 (call, WhatsApp or email), the *How to get help* guide (911 if there is immediate danger, orientation or leaving a record) and a map to reach an agency. There is also a news catalog, a form to register the situation, and access to State procedures and assistance. Built for desktop and phone, with a safety note for shared devices.
 
-**Angular 22** frontend.
+<a href="https://red-violeta.vercel.app/inicio" target="_blank" rel="noopener noreferrer" title="Live"><img src="../icons/detail-actions/live-pill.png" alt="Live" height="30" border="0" /></a>
 
-* [**App (production)**](https://red-violeta.vercel.app/inicio)
-* [**App (local)**](http://localhost:4200/)
 * [**Full README (Spanish)**](../../../README.md)
 
 <br>
