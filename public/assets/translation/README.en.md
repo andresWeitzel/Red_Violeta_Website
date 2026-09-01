@@ -17,10 +17,10 @@
 
 <div align="right">
   <a href="../../../README.md" title="Spanish">
-    <img src="./arg-flag.png" width="65" height="40" alt="Spanish" title="Spanish" />
+    <img src="./arg-flag.png" width="52" height="32" alt="Spanish" title="Spanish" />
   </a>
   <a href="./README.en.md" title="English">
-    <img src="./eeuu-flag.png" width="65" height="40" alt="English" title="English" />
+    <img src="./eeuu-flag.png" width="52" height="32" alt="English" title="English" />
   </a>
 </div>
 
@@ -34,8 +34,7 @@
 
 Home puts help first: 144, 137 and 145 (call, WhatsApp or email), the *How to get help* guide (911 if there is immediate danger, orientation or leaving a record) and a map to reach an agency. There is also a news catalog, a form to register the situation, and access to State procedures and assistance. Built for desktop and phone, with a safety note for shared devices.
 
-* [**App (production)**](https://red-violeta.vercel.app/inicio) <a href="https://red-violeta.vercel.app/inicio" target="_blank" rel="noopener noreferrer" title="Live"><img src="../icons/detail-actions/live-pill.png" alt="Live" height="20" align="absmiddle" border="0" /></a>
-* [**Full README (Spanish)**](../../../README.md)
+* [**Website**](https://red-violeta.vercel.app/inicio) <a href="https://red-violeta.vercel.app/inicio" target="_blank" rel="noopener noreferrer" title="Live"><img src="../icons/detail-actions/live-pill.png" alt="Live" height="20" align="absmiddle" border="0" /></a>
 
 <br>
 
@@ -229,8 +228,7 @@ Publish `dist/proyecto01/browser/` on **Vercel**. Live: [red-violeta.vercel.app/
 <details>
   <summary>View details</summary>
 
-* [Spanish README](../../../README.md)
-* [App (production)](https://red-violeta.vercel.app/inicio)
+* [Website](https://red-violeta.vercel.app/inicio)
 * [GitHub repo](https://github.com/andresWeitzel/Red_Violeta_Website)
 * Doc template: [ApiRest Electronic Devices ExpressJS](https://github.com/andresWeitzel/ApiRest_Electronic_Devices_ExpressJS)
 

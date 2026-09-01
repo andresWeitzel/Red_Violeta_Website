@@ -17,10 +17,10 @@
 
 <div align="right">
   <a href="./README.md" title="Español">
-    <img src="./public/assets/translation/arg-flag.png" width="65" height="40" alt="Español" title="Español" />
+    <img src="./public/assets/translation/arg-flag.png" width="52" height="32" alt="Español" title="Español" />
   </a>
   <a href="./public/assets/translation/README.en.md" title="Inglés">
-    <img src="./public/assets/translation/eeuu-flag.png" width="65" height="40" alt="Inglés" title="Inglés" />
+    <img src="./public/assets/translation/eeuu-flag.png" width="52" height="32" alt="Inglés" title="Inglés" />
   </a>
 </div>
 
@@ -34,7 +34,7 @@
 
 En Inicio está la ayuda inmediata: 144, 137 y 145 (llamar, WhatsApp o email), la guía *Cómo pedir ayuda* (911 si hay peligro ahora, orientación o dejar constancia) y el mapa para llegar a un organismo. También hay un catálogo de novedades, un formulario para registrar la situación y acceso a trámites y asistencia del Estado. Pensada para desktop y celular, con un aviso si el dispositivo es compartido.
 
-* [**App (producción)**](https://red-violeta.vercel.app/inicio) <a href="https://red-violeta.vercel.app/inicio" target="_blank" rel="noopener noreferrer" title="Ver en vivo"><img src="./public/assets/icons/detail-actions/live-pill.png" alt="Live" height="20" align="absmiddle" border="0" /></a>
+* [**Sitio web**](https://red-violeta.vercel.app/inicio) <a href="https://red-violeta.vercel.app/inicio" target="_blank" rel="noopener noreferrer" title="Ver en vivo"><img src="./public/assets/icons/detail-actions/live-pill.png" alt="Live" height="20" align="absmiddle" border="0" /></a>
 
 <br>
 
